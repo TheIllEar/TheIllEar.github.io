@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="описание не длиннее 155 символов">
+    <meta name="keywords" content="мета-теги, шаблон, html, css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid header-container">
+        <div class="header-main">
+          <div class="row header-row">
+            <div class="col-2 header-main__logo">
+              <img class="header-main__logo-img"src="img/logo.png" alt="Logo">
+            </div>
+            <div class="col-3 header-main__contacts">
+              <a href="#" class="header-main__contacts-tel">+7 (495) 677-17-79</a>
+              <p class="header-main__contacts-operating">Ежедневно с 10:00 до 20:00</p>
+            </div>
+            <div class="col-3 header-main__social">
+              <ul class="header-main__social-list social-list">
+                <li class="social-list__item"><a href="#" class="social-list__link social-list__link-fb"></a></li>
+                <li class="social-list__item"><a href="#" class="social-list__link social-list__link-vk"></a></li>
+                <li class="social-list__item"><a href="#" class="social-list__link social-list__link-inst"></a></li>
+              </ul>
+            </div>
+            <div class="col-2 header-main__lang">
+              <button class="header-main__lang-btn">
+                <img src="img/russia.svg" alt="Local" class="header-main__lang-img">
+                <b class="header-main__lang-text">RUS <span> |  Руб.</span></b>
+              </button>
+            </div>
+            <div class="col-2 header-main__cabinet">
+              <div class="header-main__cabinet-box">
+                <img src="img/cabinet.png" alt="Personal cabinet" class="header-main__cabinet-img">
+                <a href="#" class="header-main__cabinet-text">Личный кабинет</a>
+              </div>
+            </div>
+            <div class="col-2 header-main__menu">
+              <div class="header-main__menu-box">
+                <button class="header-main__menu-btn"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile-header -->
+        <div class="header-main header-main--mobile">
+          <div class="row header-row">
+            <div class="header-main__logo">
+              <img class="header-main__logo-img"src="img/logo-mobile.svg" alt="Logo">
+            </div>
+            <div class="header-main__side-part">
+              <div class="header-main__contacts" id="header-main__contacts-tel">
+                <button class="header-main__contacts-tel"></button>
+                <div class="header-main__contacts--modal">
+                  <a href="#" class="header-main__contacts-phone">+7 (495) 677-17-79</a>
+                  <p class="header-main__contacts-operating">Ежедневно с 10:00 до 20:00</p>
+                </div>
+              </div>
+              <div class="header-main__cabinet">
+                <div class="header-main__cabinet-box">
+                  <img src="img/cabinet-mobile.svg" alt="Personal cabinet" class="header-main__cabinet-img ">
+                </div>
+              </div>
+              <div class="header-main__menu">
+                <div class="header-main__menu-box">
+                  <button class="header-main__menu-btn"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="nav">
+      <div class="container-fluid nav-container">
+        <ul class="nav-list">
+          <li class="nav-list__item"><a href="#" class="nav-list__link">О нашей компании</a></li>
+          <li class="nav-list__item"><a href="#" class="nav-list__link">Выбрать отель</a></li>
+          <li class="nav-list__item"><a href="#" class="nav-list__link">Инвестировать в отель</a></li>
+          <li class="nav-list__item"><a href="#" class="nav-list__link">+ Присоединить отель</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="banner">
+      <div class="container-fluid banner-container">
+        <h1 class="banner__title">Забронируйте уникальное жилье быстро и просто</h1>
+        <p class="banner__text">Лучший способ арендовать квартиру</p>
+        <form action="" class="banner-form">
+          <div class="banner-form__hotel">
+            <input type="text" maxlength="25" placeholder="Отель">
+          </div>
+          <div class="banner-form__arrive">
+            <input type="text" maxlength="25" placeholder="Заезд - Отъезд">
+          </div>
+          <div class="banner-form__person">
+            <input type="text" maxlength="25" placeholder="2 взрослых  - один номер">
+            <button>Начать поиск</button>
+          </div>
+        </form>
+        <!-- Mobile-form -->
+        <form action="" class="banner-form banner-form--mobile">
+          <div class="banner-form__hotel">
+            <input type="text" maxlength="25" placeholder="Отель">
+          </div>
+          <div class="banner-form__arrive">
+            <span><input type="text" maxlength="25" placeholder="Заезд"><i class="banner-form__arrive--updown"></i></span>
+            <span><i class="banner-form__leave--ico"></i><input type="text" maxlength="25" placeholder="Отъезд"><i class="banner-form__leave--updown"></i></span>
+          </div>
+          <div class="banner-form__person">
+            <span><input type="text" maxlength="25" placeholder="2 взрослых  - один номер"><i class="banner-form__person--updown"></i></span>
+            <button>Начать поиск</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="script/jquery.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>

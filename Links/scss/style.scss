@@ -1,0 +1,306 @@
+$gray: #484847;
+$white: #fff;
+$black: #000;
+$bgbutton: #64E6E6;
+$sublayer: #d57197;
+
+@mixin layerBefore {
+  content: '';
+  position: absolute;
+  left: -7px;
+  bottom: -7px;
+  background-color: $sublayer;
+  border: 2px solid $gray;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  z-index: -5;
+  transition: 0.4s;
+  @media (max-width: 340px) {
+    padding: 18px;
+  }
+};
+@mixin layerAfter {
+  content: '';
+  position: absolute;
+  left: -11px;
+  bottom: -11px;
+  background-color: $sublayer;
+  border: 2px solid $gray;
+  width: 100%;
+  padding: 20px;
+  z-index: -7;
+  transition: 0.4s;
+  @media (max-width: 340px) {
+    padding: 18px;
+  }
+};
+@mixin layerHover {
+  background-color: $bgbutton;
+  transition: 0.4s;
+};
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url(../fonts/MyriadPro.ttf);
+  font-weight: 400;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $black;
+  color: $white;
+  font-family: "MyriadPro";
+}
+
+.bgfix {
+  content: '';
+  display: block;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: -2;
+  // animation-name: bgimg;
+  // animation-duration: 10s;
+  // animation-timing-function: cubic-bezier(1,.25,.25,1);
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+  background-image: url(../img/bg1.jpg);
+  // @keyframes bgimg {
+  //   from {
+  //     background-image: url(../img/bg1.jpg);
+  //   };
+  //   to {
+  //     background-image: url(../img/bg2.jpg);
+  //   };
+  // };
+  @media (max-width: 1024px) {
+    background-image: url(../img/bg12.png);
+    background-position: right;
+    top: -30px;
+    min-height: 568px;
+    // animation-name: mobilebgimg;
+    // @keyframes mobilebgimg {
+    //   from {
+    //     background-image: url(../img/bg12.png);
+    //   };
+    //   to {
+    //     background-image: url(../img/bg13.png);
+    //   };
+    // };
+  }
+}
+
+.container-fluid {
+  padding: 0 40px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: 800px;
+  position: absolute;
+  @media (max-width: 440px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // margin: 40px auto;
+    // height: 100%;
+  }
+  .header {
+    margin-bottom: 35px;
+    // @media (max-width: 375px) {
+    //   margin-bottom: 25px;
+    // }
+    @media (max-height: 800px) {
+      margin-bottom: 25px;
+    }
+    @media (max-width: 340px) {
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 175px;
+      padding: 15px 0;
+      margin: 0 auto;
+      background: rgba(0,0,0,0.7);
+      border-radius: 5px;
+      @media (max-width: 440px) {
+        width: 135px;
+        padding: 5px 0;
+      }
+      @media (max-width: 400px) {
+        width: 118px;
+      }
+      &__img {
+        vertical-align: middle;
+        border-style: none;
+        margin: 0 auto;
+        max-width: 120px;
+        width: 100%;
+        display: block;
+        @media (max-width: 440px) {
+          max-width: 105px;
+        }
+        @media (max-width: 400px) {
+          // max-width: 100px;
+          max-width: 90px
+        }
+      }
+    }
+    .scale-up-center {
+      animation: scale-up-center 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      @keyframes scale-up-center {
+        0% {
+          transform: scale(0.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .nav-block {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    &__title {
+      text-align: center;
+      padding: 30px 0 0 0;
+      @media (max-width: 500px) {
+        font-size: 30px;
+      }
+      @media (max-width: 400px) {
+        font-size: 23px;
+        margin: 0;
+        padding: 16px 0 0 0;
+      }
+    }
+    &__row {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px 10px;
+    }
+    .nav-list {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: center;
+      @media (max-width: 750px) {
+        flex-direction: column;
+        margin: 0;
+      }
+      &__item {
+        list-style: none;
+        max-width: 320px;
+        width: 100%;
+        display: inline-block;
+        background: $white;
+        margin: 15px;
+        @media (max-width: 750px) {
+          flex-direction: column;
+          margin: 0;
+          margin: 13px auto;
+        }
+      }
+      .scale-up-center {
+      	animation: scale-up-center 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        @keyframes scale-up-center {
+          0% {
+            transform: scale(0.5);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+      &__link {
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 6px;
+        box-sizing: border-box;
+        background-color: $bgbutton;
+        border: 2px solid $gray;
+        transition: 0.4s;
+        color: $black;
+        font-size: 22px;
+        font-weight: bold;
+        @media (max-width: 400px) {
+          font-size: 18px;
+        }
+        @media (max-width: 340px) {
+          font-size: 15px;
+        }
+        &:hover {
+          background-color: $white;
+          transition: 0.4s;
+        }
+        &--inst {
+          &:before {
+            @include layerBefore ();
+          }
+          &:hover:before {
+            @include layerHover;
+          }
+          &:after {
+            @include layerAfter ();
+          }
+          &:hover:after {
+            @include layerHover;
+          }
+        }
+        &--sc {
+          &:before {
+            @include layerBefore ();
+          }
+          &:hover:before {
+            @include layerHover;
+          }
+          &:after {
+            @include layerAfter ();
+          }
+          &:hover:after {
+            @include layerHover;
+          }
+        }
+        &--mc {
+          &:before {
+            @include layerBefore ();
+          }
+          &:hover:before {
+            @include layerHover;
+          }
+          &:after {
+            @include layerAfter ();
+          }
+          &:hover:after {
+            @include layerHover;
+          }
+        }
+        &--vk{
+          &:before {
+            @include layerBefore ();
+          }
+          &:hover:before {
+            @include layerHover;
+          }
+          &:after {
+            @include layerAfter ();
+          }
+          &:hover:after {
+            @include layerHover;
+          }
+        }
+      }
+    }
+  }
+}

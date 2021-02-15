@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: http://worstbandnameever.com/sitemap.xml
+Host: worstbandnameever.com
