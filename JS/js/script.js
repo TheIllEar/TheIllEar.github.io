@@ -47,16 +47,17 @@ const menuHelp = document.querySelector('.menu-list--help');
 const itemSetting = document.querySelector('.menu-list__item-setting');
 const itemHelp = document.querySelector('.menu-list__item-help');
 
-menuBtn.onclick = (() => {
-  menuBox.classList.toggle('menu-box--show')
+menuBtn.addEventListener('click', () => {
+  menuBox.classList.toggle('menu-box--show');
 });
-itemSetting.onclick = (() => {
+itemSetting.addEventListener('click', () => {
   menuList.style.marginLeft = '-400px';
   setTimeout(() => {
     menuSetting.style.display = 'block';
   }, 100);
 });
-itemHelp.onclick = (() => {
+
+itemHelp.addEventListener('click', () => {
   menuList.style.marginLeft = '-400px';
   setTimeout(() => {
     menuHelp.style.display = 'block';
@@ -64,12 +65,12 @@ itemHelp.onclick = (() => {
 });
 
 for (let backBtn of backBtnList) {
-  backBtn.onclick = (() => {
+  backBtn.addEventListener('click', () => {
     menuList.style.marginLeft = '';
     menuSetting.style.display = 'none';
     menuHelp.style.display = 'none';
   });
-}
+};
 
 // DROP DOWN MENU /////////////////////////////////////////////////////
 // const ddLink = document.querySelectorAll('.DropDown-list__link--nav');
@@ -95,3 +96,45 @@ for (let backBtn of backBtnList) {
 //     link.classList.add('active');
 //   });
 // });
+///////////////////////////////////////////////////////////////////////////////
+
+// DRUG N DROP /////////////////////////////////////////////////////
+let blockFrom = document.querySelector(".block-from")
+let blockInto = document.querySelector(".block-into")
+let elems = document.querySelectorAll("div.elem")
+let elem = document.querySelector(".elem")
+let dragged = null
+
+elems.forEach(function (elem) {
+  elem.addEventListener("dragstart", function () {
+    dragged = this
+    dragged.style.backgroundColor = "yellow"
+    blockFrom.style.borderColor = "yellow"
+  })
+  elem.addEventListener("dragend", function () {
+    dragged = this
+    dragged.style.backgroundColor = ""
+    blockFrom.style.borderColor = ""
+    blockInto.style.borderColor = ""
+  })
+})
+
+blockInto.addEventListener("dragover", function (evt) {
+  evt.preventDefault()
+  this.style.borderColor = "yellow"
+  blockFrom.style.borderColor = ""
+})
+
+blockInto.addEventListener("drop", function () {
+  this.appendChild(dragged)
+  this.style.borderColor = ""
+})
+
+blockFrom.addEventListener("dragover", function (evt) {
+  evt.preventDefault()
+  this.style.borderColor = "yellow"
+})
+
+blockFrom.addEventListener("drop", function () {
+  this.appendChild(dragged)
+})

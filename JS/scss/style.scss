@@ -202,6 +202,7 @@ button:focus {
         justify-content: center;
         &__item {
           position: relative;
+          perspective: 2000px;
         }
         &__link {
           display: block;
@@ -233,7 +234,11 @@ button:focus {
       position: absolute;
       top: 80px;
       left: 0;
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transform-origin: center -100px;
+      transform: rotateX(-25deg);
+      transition: 0.3s;
       .dd-menu-list,
       .dd-submenu-list {
         display: block;
@@ -258,7 +263,11 @@ button:focus {
       position: absolute;
       top: 0;
       left: 198px;
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transform-origin: center -100px;
+      transform: rotateX(-25deg);
+      transition: 0.3s;
       &-list {
         flex-direction: column;
       }
@@ -275,11 +284,39 @@ button:focus {
     }
     .DropDown-list__link.active + .dd-menu,
     .DropDown-list__link.active + .dd-submenu {
-      display: block;
+      transform: rotateX(0deg);
+      transition: 0.3s;
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
 .DropDown-list__item:hover > .dd-menu,
 .dd-menu-list__item:hover > .dd-submenu {
-  display: block;
+  transform: rotateX(0deg);
+  opacity: 1;
+  visibility: visible;
+}
+
+//DrugnDrop /////////////////////////////////////////////////////
+.DrugnDrop {
+  &-container {
+    .block-from,
+    .block-into {
+      width: 100%;
+      height: 200px;
+      background-color: #000;
+      margin-bottom: 20px;
+      border: 3px solid #3abcb0;
+      box-sizing: border-box;
+      display: flex;
+    }
+    .elem {
+      width: 30px;
+      height: 30px;
+      background-color: #3abcb0;
+      border-radius: 3px;
+      margin: 20px 0 0 20px;
+    }
+  }
 }
