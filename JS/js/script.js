@@ -138,3 +138,23 @@ blockFrom.addEventListener("dragover", function (evt) {
 blockFrom.addEventListener("drop", function () {
   this.appendChild(dragged)
 })
+
+// MEDIA /////////////////////////////////////////////////////
+const mediaQuery = window.matchMedia('(max-width: 768px)') // Создаем медиа условие, проверяющее viewports на ширину не менее 768 пикселей.
+if (mediaQuery.matches) { //.matches подходит только для одноразовых проверок, но оно не может постоянно проверять наличие изменений окна браузера
+  console.log('Media Query Matched!')
+} else {
+
+}
+
+
+const handleTabletChange = (evt) => {
+  if (evt.matches) {
+    blockFrom.style.display = 'none';
+  } else {
+    blockFrom.style.display = '';
+  }
+}
+
+mediaQuery.addListener(handleTabletChange) //метод, «включающий» прослушку на изменение ширины экрана
+handleTabletChange(mediaQuery)
