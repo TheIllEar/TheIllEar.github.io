@@ -156,5 +156,5 @@ const handleTabletChange = (evt) => {
   }
 }
 
-mediaQuery.addListener(handleTabletChange) //метод, «включающий» прослушку на изменение ширины экрана
 handleTabletChange(mediaQuery)
+mediaQuery.addListener(handleTabletChange) //метод, «включающий» прослушку на изменение ширины экрана
