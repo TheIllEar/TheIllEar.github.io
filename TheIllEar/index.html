@@ -27,29 +27,34 @@
   <header>
     <div class="container-fluid">
       <div class="row row-header">
-        <div class="col-10">
+        <div class="col-1 col-logo">
+          <div class="logo">
+            <img class="logo__img"src="img/logo_revert.png" alt="">
+          </div>
+        </div>
+        <div class="col-9 col-navigation">
           <nav class="navigation">
             <ul>
               <li class="navigation__item navigation__item--active">
-                <a class="navigation__link" href="index.html">all features</a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link" href="news.html">news</a>
+                <a class="navigation__link" href="#">all features</a>
               </li>
               <li class="navigation__item">
                 <a class="navigation__link" href="reviews.html">reviews</a>
               </li>
               <li class="navigation__item">
-                <a class="navigation__link" href="releases.html">releases</a>
+                <a class="navigation__link navigation__link--disabled" href="#">news</a>
               </li>
               <li class="navigation__item">
-                <a class="navigation__link" href="#">podcasts</a>
+                <a class="navigation__link navigation__link--disabled" href="#">releases</a>
               </li>
               <li class="navigation__item">
-                <a class="navigation__link" href="#">events</a>
+                <a class="navigation__link navigation__link--disabled" href="#">podcasts</a>
               </li>
               <li class="navigation__item">
-                <a class="navigation__link" href="#">about</a>
+                <a class="navigation__link navigation__link--disabled" href="#">events</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link--disabled" href="#">about</a>
               </li>
             </ul>
           </nav>
@@ -61,26 +66,19 @@
             <li class="social__item"><a class="social__link social__link--mcloud" target="_blank" href="https://www.mixcloud.com/theillear/"></a></li>
           </ul>
         </div>
-        <div class="fixed-logo">
-          <img src="img/logo.png" alt="">
-        </div>
       </div>
     </div>
-    <div class="banner"></div>
     <button type="button">
       <img class="header-btn" src="img/ico/menu.svg" alt="">
     </button>
-    <div class="top">
-      <a class="top-ico" href="javascript::"></a>
-    </div>
   </header>
   <main>
-    <section>
+    <section class="banner-section">
         <div class="row no-gutters">
           <div class="col-8 col-poster--main">
             <div class="main-poster">
               <div class="main-poster__thumb">
-                <a href="news/brainfeeder.html"><img src="img/poster.jpg" alt="post"></a>
+                <a href="#"><img src="img/poster.jpg" alt="post"></a>
                 <h2>Brainfeeder X 10 Year Compilation</h2>
                 <p>news</p>
               </div>
@@ -96,7 +94,7 @@
             </div>
             <div class="poster poster-2">
               <div class="poster__thumb">
-                <a href="releases/thegaslampkillerbreakthrough.html"><img src="img/glk.jpg" alt="post"></a>
+                <a href="#"><img src="img/glk.jpg" alt="post"></a>
                 <h3>The Gaslamp Killer - Breakthrough</h3>
                 <p>releases</p>
               </div>
@@ -124,7 +122,7 @@
             <div class="carousel_slide">
               <div class="poster poster-2">
                 <div class="poster__thumb">
-                  <a href="releases/thegaslampkillerbreakthrough.html"><img src="img/glk.jpg" alt="post"></a>
+                  <a href="#"><img src="img/glk.jpg" alt="post"></a>
                   <h3>The Gaslamp Killer - Breakthrough</h3>
                   <p>releases</p>
                 </div>
@@ -145,19 +143,19 @@
     <section>
       <div class="container-fluid">
         <div class="row content-row">
-          <div class="col-8 col-post">
+          <div class="col-9 col-post">
             <span>the latest <i>\</i></span>
             <div class="post post--1">
               <div class="post-block">
                 <div class="block-left">
                   <div class="block-left__thumb">
-                    <a href="news/amontobin.html"><img src="img/news/amontobin.png" alt="post img"></a>
+                    <a href="#"><img src="img/news/amontobin.png" alt="post img"></a>
                   </div>
                 </div>
                 <div class="block-right">
                   <div class="block-right__info">
-                    <a class="block-right__tag" href="news.html">news</a>
-                    <h2 class="block-right__title"><a href="news/amontobin.html">Amon Tobin Just Finished New Album</a></h2>
+                    <a class="block-right__tag" href="#">news</a>
+                    <h2 class="block-right__title"><a href="#">Amon Tobin Just Finished New Album</a></h2>
                     <div class="block-right__date">
                       <p>January 11, 2019</p>
                       <a href="#">by theillear</a>
@@ -217,13 +215,13 @@
               <div class="post-block">
                 <div class="block-left">
                   <div class="block-left__thumb">
-                    <a href="releases/illajjohnyancey.html"><img src="img/illaj.jpg" alt="post img"></a>
+                    <a href="#"><img src="img/illaj.jpg" alt="post img"></a>
                   </div>
                 </div>
                 <div class="block-right">
                   <div class="block-right__info">
-                    <a class="block-right__tag" href="releases.html">releases</a>
-                    <h2 class="block-right__title"><a href="releases/illajjohnyancey.html">Illa J - John Yancey</a></h2>
+                    <a class="block-right__tag" href="#">releases</a>
+                    <h2 class="block-right__title"><a href="#">Illa J - John Yancey</a></h2>
                     <div class="block-right__date">
                       <p> November 30, 2018</p>
                       <a href="#">by theillear</a>
@@ -236,51 +234,83 @@
               </div>
             </div>
           </div>
-          <div class="col-4 col-aside">
+          <div class="col-3 col-aside">
             <span>releases <i>\</i></span>
             <div class="aside-releases">
-              <div class="aside-row row--1 justify-content-between">
+              <div class="aside-row row--1">
                 <div class="aside-row__thumb row-thumb--1">
-                  <a href="releases/lornvessel.html"><p>Lorn - Vessel</p><img src="img/lorn.jpg" alt="releas img"></a>
+                  <a href="#"><p>Lorn - Vessel</p><img src="img/lorn.jpg" alt="releas img"></a>
                 </div>
                 <div class="aside-row__thumb row-thumb--2">
-                  <a href="releases/mophonomo3.html"><p>Mophono - M​.O.​3.</p><img src="img/mophono.jpg" alt="releas img"></a>
+                  <a href="#"><p>Mophono - M​.O.​3.</p><img src="img/mophono.jpg" alt="releas img"></a>
                 </div>
               </div>
-              <div class="aside-row row--2 justify-content-between">
+              <div class="aside-row row--2">
                 <div class="aside-row__thumb row-thumb--1">
-                  <a href="releases/iglooghoststeelmogu.html"><p>Iglooghost - Steel Mogu</p><img src="img/iglooghost.jpg" alt="releas img"></a>
+                  <a href="#"><p>Iglooghost - Steel Mogu</p><img src="img/iglooghost.jpg" alt="releas img"></a>
                 </div>
                 <div class="aside-row__thumb row-thumb--2">
-                  <a href="releases/illajjohnyancey.html"><p>Illa J - John Yancey</p><img src="img/illaj.jpg" alt="releas img"></a>
+                  <a href="#"><p>Illa J - John Yancey</p><img src="img/illaj.jpg" alt="releas img"></a>
                 </div>
               </div>
-              <div class="aside-row row--3 justify-content-between">
+              <div class="aside-row row--3">
                 <div class="aside-row__thumb row-thumb--1">
-                  <a href="releases/yosihorikawavapor.html"><p>Yosi Horikawa - Vapor</p><img src="img/poster2.jpg" alt="releas img"></a>
+                  <a href="#"><p>Yosi Horikawa - Vapor</p><img src="img/poster2.jpg" alt="releas img"></a>
                 </div>
                 <div class="aside-row__thumb row-thumb--2">
-                  <a href="releases/kutmahsketchbookradioarchives.html"><p>Kutmah - Sketchbook Radio Archives</p><img src="img/various.jpg" alt="releas img"></a>
+                  <a href="#"><p>Kutmah - Sketchbook Radio Archives</p><img src="img/various.jpg" alt="releas img"></a>
                 </div>
               </div>
-              <div class="aside-row row--4 justify-content-between">
+              <div class="aside-row row--4">
                 <div class="aside-row__thumb row-thumb--1">
-                  <a href="releases/yussefkamaalblackfocus.html"><p>Yussef Kamaal - Black Focus</p><img src="img/yusseef.jpg" alt="releas img"></a>
+                  <a href="#"><p>Yussef Kamaal - Black Focus</p><img src="img/yusseef.jpg" alt="releas img"></a>
                 </div>
                 <div class="aside-row__thumb row-thumb--2">
-                  <a href="releases/jonwaynerapalbumtwo.html"><p>Jonwayne - Rap Album Two</p><img src="img/wayn.jpg" alt="releas img"></a>
+                  <a href="#"><p>Jonwayne - Rap Album Two</p><img src="img/wayn.jpg" alt="releas img"></a>
                 </div>
               </div>
-              <div class="aside-row row--5 justify-content-between">
+              <div class="aside-row row--5">
                 <div class="aside-row__thumb row-thumb--1">
-                  <a href="releases/lealanifantasticplanet.html"><p>Lealani - Fantastic Planet</p><img src="img/lealanifantasticplanet.jpg" alt="releas img"></a>
+                  <a href="#"><p>Lealani - Fantastic Planet</p><img src="img/lealanifantasticplanet.jpg" alt="releas img"></a>
                 </div>
                 <div class="aside-row__thumb row-thumb--2">
-                  <a href="releases/kokoroko.html"><p>KOKOROKO - KOKOROKO</p><img src="img/kokoroko.jpg" alt="releas img"></a>
+                  <a href="#"><p>KOKOROKO - KOKOROKO</p><img src="img/kokoroko.jpg" alt="releas img"></a>
                 </div>
               </div>
             </div>
-            <div class="aside-subscribe d-flex justify-content-between">
+            <div class="releases-carousel">
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/lorn.jpg" alt="releas img"><p>Lorn - Vessel</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/mophono.jpg" alt="releas img"><p>Mophono - M​.O.​3.</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/iglooghost.jpg" alt="releas img"><p>Iglooghost - Steel Mogu</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/illaj.jpg" alt="releas img"><p>Illa J - John Yancey</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/poster2.jpg" alt="releas img"><p>Yosi Horikawa - Vapor</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/various.jpg" alt="releas img"><p>Kutmah - Sketchbook Radio Archives</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/yusseef.jpg" alt="releas img"><p>Yussef Kamaal - Black Focus</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/wayn.jpg" alt="releas img"><p>Jonwayne - Rap Album Two</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/lealanifantasticplanet.jpg" alt="releas img"><p>Lealani - Fantastic Planet</p></a>
+              </div>
+              <div class="releases-carousel__item">
+                <a href="#"><img src="img/kokoroko.jpg" alt="releas img"><p>KOKOROKO - KOKOROKO</p></a>
+              </div>
+            </div>
+            <div class="aside-subscribe d-flex">
               <div class="aside-block">
                 <p class="aside-block__description">Welcom to theillear</p>
                 <form action="#" class="aside-block__form">
@@ -312,17 +342,17 @@
       <a class="footer-link" href="#"><img class="footer-link__logo" src="img/logo.png" alt=""></a>
       <div class="navigation">
         <ul class="navigation__top">
-          <li class="navigation__item"><a href="#" class="navigation__link">about</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">partners</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">jobs</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">about</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">partners</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">jobs</a></li>
         </ul>
         <ul class="navigation__bottom">
-          <li class="navigation__item"><a href="news.html" class="navigation__link">news</a></li>
           <li class="navigation__item"><a href="reviews.html" class="navigation__link">reviews</a></li>
-          <li class="navigation__item"><a href="releases.html" class="navigation__link">releases</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">podcasts</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">events</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">donate</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">news</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">releases</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">podcasts</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">events</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link navigation__link--disabled">donate</a></li>
         </ul>
       </div>
     </div>
@@ -332,31 +362,30 @@
         <li class="social__item"><a class="social__link social__link--inst" target="_blank" href="https://www.instagram.com/the.ill.ear/"></a></li>
         <li class="social__item"><a class="social__link social__link--mcloud" target="_blank" href="https://www.mixcloud.com/theillear/"></a></li>
       </ul>
-      <a href="#">contact us</a>
     </div>
   </footer>
   <div class="modal-nav" id="myModal">
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active" href="index.html">all features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="news.html">news</a>
+        <a class="nav-link active" href="#">all features</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="reviews.html">reviews</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="releases.html">releases</a>
+        <a class="nav-link nav-link--disabled" href="#">news</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">podcasts</a>
+        <a class="nav-link nav-link--disabled" href="#">releases</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">events</a>
+        <a class="nav-link nav-link--disabled" href="#">podcasts</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">about</a>
+        <a class="nav-link nav-link--disabled" href="#">events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link--disabled" href="#">about</a>
       </li>
     </ul>
     <ul>
