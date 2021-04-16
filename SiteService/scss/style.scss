@@ -34,16 +34,6 @@ body {
   .logo {
     align-self: center;
     padding: 0 15px;
-    // @media (max-width: 777px) {
-    //   flex: 0 0 40.666667%;
-    //   max-width: 40.666667%;
-    // }
-    // @media (max-width: 620px) {
-    //   flex: 100%;
-    //   max-width: 100%;
-    //   padding: 15px;
-    //   text-align: center;
-    // }
     &__img {
       max-width: 55px;
       -o-object-fit: cover;
@@ -63,31 +53,14 @@ body {
       font-weight: 500;
       font-size: calc( (100vw - 320px)/(1400 - 320) * (28 - 17) + 17px);
       color: $textblue;
-      // @media (max-width: 668px) {
-      //   font-size: calc( (100vw - 320px)/(1400 - 320) * (20 - 17) + 17px);
-      // }
-      // @media (max-width: 1500px) {
-      //   font-size: 3vw;
-      // }
-      // @media (max-width: 620px) {
-      //   font-size: 5vw;
-      // }
-      // @media (max-width: 500px) {
-      //   font-size: 6vw;
-      // }
-      // @media (max-width: 420px) {
-      //   font-size: 7vw;
-      // }
     }
   }
 }
 .info {
-  padding: 30px 20px;
   display: flex;
-  // justify-content: flex-end;
+  // padding: 30px 20px; вернуть, когда будет языковая копия
+  padding: 30px 0;
   margin-left: auto;
-  // flex-direction: column;
-  // text-align: right;
   color: $textblue;
   font-size: calc( (100vw - 320px)/(1400 - 320) * (17 - 14) + 14px);
   font-weight: 500;
@@ -99,18 +72,6 @@ body {
   @media (max-width: 350px) {
     padding: 20px 0 20px 15px;
   }
-  // @media (max-width: 777px) {
-  //   flex: 0 0 59.333333%;
-  //   max-width: 59.333333%;
-  //   font-size: 14px;
-  //   padding: 20px 15px;
-  // }
-  // @media (max-width: 620px) {
-  //   flex: 100%;
-  //   max-width: 100%;
-  //   text-align: center;
-  //   padding: 5px 15px 20px;
-  // }
   &__address {
     i {
       position: relative;
@@ -136,7 +97,6 @@ body {
     a {
       position: relative;
       display: block;
-      // margin-left: 30px;
       color: $textblue;
       text-decoration: none;
       transition: 0.3s;
@@ -153,9 +113,6 @@ body {
         width: 19px;
         height: 19px;
       }
-      // @media (max-width: 777px) {
-      //   font-size: 14px;
-      // }
       &:hover {
         color: $mars;
       }
@@ -163,13 +120,13 @@ body {
   }
 }
 .lang {
-  display: flex;
+  // display: flex; вернуть, когда будет языковая копия
+  display: none;
   justify-content: flex-end;
   align-items: center;
   padding-right: 15px;
   @media (max-width: 778px) {
     order: 1;
-    // margin-left: auto;
   }
   &-box {
     border-radius: 20px;
@@ -344,7 +301,6 @@ body {
 
 //MODAL MENU////////////////////////////////////////////////
 .modal-menu {
-  // display: none;
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -399,7 +355,6 @@ body {
   background-position: center;
   &-container {
     text-align: center;
-    // height: 60vh;
     color: $white;
     position: relative;
   }
@@ -548,7 +503,6 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 25px;
-    transition: 0.3s;
     @media (max-width: 777px) {
       margin-bottom: 20px;
     }
@@ -602,6 +556,7 @@ body {
       }
       &__text {
         color: $textgray;
+        transition: 0.3s;
         @media (max-width: 920px) {
           font-size: 14px;
         }
@@ -1265,7 +1220,6 @@ body {
 
 ///FORMS/////////////////////////////////////////////
 .modal-form {
-  // display: none;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
