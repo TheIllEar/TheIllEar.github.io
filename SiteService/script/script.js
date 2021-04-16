@@ -154,7 +154,7 @@
     nav:true,
     dots:false,
     startPosition: 4,
-    // autoplay: true,
+    autoplay: true,
     responsiveClass:true,
     responsive : {
       0:{
