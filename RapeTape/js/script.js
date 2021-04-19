@@ -1,5 +1,4 @@
-;(function(){ //IIFE
-  'use strict'
+document.addEventListener('DOMContentLoaded', function () {
   //ModalMenu
   const btnMenu = document.querySelector('.menu-btn')
   const modalMenu = document.querySelector('.modal-menu')
@@ -25,4 +24,4 @@
       value.style.backgroundImage = 'url(../img/album' + i + '.jpg)'
     }
   }
-})();
+});
