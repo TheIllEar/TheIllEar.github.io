@@ -66,7 +66,7 @@ body {
 }
 
 .accordion--active {
-  padding: 6px;
+  padding: 6px 0;
   border: 2px solid #484847;
   border-top: none;
   height: 65px;
@@ -147,7 +147,8 @@ body {
 .container-fluid .nav-block {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
-  height: calc(100vh - 30px);
+  /* height: calc(100vh - 30px); */
+  height: calc(100vh - 70px);
   position: relative;
 }
 .qr {
