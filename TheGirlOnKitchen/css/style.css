@@ -51,6 +51,7 @@ body {
 }
 .col-12 {
   margin: 7px 0 14px;
+  padding: 0px 8px;
 }
 .accordion {
   width: 100%;
@@ -235,7 +236,9 @@ body {
 }
 @media (max-width: 400px) {
   .container-fluid .nav-block .nav-list__link {
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 15px;
+    white-space: nowrap;
   }
 }
 @media (max-width: 340px) {
