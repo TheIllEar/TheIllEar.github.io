@@ -10,7 +10,6 @@
 }
 
 body {
-  /* background-color: #000; */
   background: linear-gradient(329deg, #ed1568, #df9bb6);
   color: #fff;
   font-family: 'MyriadPro';
@@ -224,7 +223,7 @@ body {
   text-decoration: none;
   display: inline-block;
   width: 100%;
-  text-align: center;
+  text-align: center; 
   padding: 6px;
   box-sizing: border-box;
   background-color: #64e6e6;
