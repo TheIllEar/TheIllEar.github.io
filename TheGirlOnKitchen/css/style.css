@@ -147,8 +147,7 @@ body {
 .container-fluid .nav-block {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
-  /* height: calc(100vh - 30px); */
-  height: calc(100vh - 70px);
+  height: calc(100vh - 30px);
   position: relative;
 }
 .qr {
