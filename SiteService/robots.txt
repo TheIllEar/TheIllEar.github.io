@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: http://2stk.ru/sitemap.xml
+Host: 2stk.ru
