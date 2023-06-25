@@ -33,10 +33,12 @@
           navContainer = body.querySelector(this._selectors.nav_container),
           hammertime = new Hammer(navContainer);
 
-        hammertime.on('pan', (e) => {
-          if (e.offsetDirection === 2 && !e.target.classList.contains(this._classes.nav_link)) {
-            this._handleTouch(e, navContainer);
-          }
+        hammertime.on('panleft panright panend', (e) => {
+          console.log('lol', e);
+          // @todo сделать уход сайдбара ровно по курсору, без дерганий, если начинаешь с середины.
+          //   if (e.offsetDirection === 1 && !e.target.classList.contains(this._classes.nav_link)) {
+          this._handleTouch(e, navContainer);
+          //   }
         });
       }
     },
@@ -72,14 +74,13 @@
 
       if (position < 0) navContainer.style.left = x - total + 'px';
       else if (position >= 0) navContainer.style.left = 0 + 'px';
-      if (e.isFinal) {
+      if (e.type === 'panend') {
         let navBtn = navContainer.querySelector(this._selectors.nav_btn);
         navContainer.style.left = '';
         if (position <= -total * 0.5) {
           navBtn.click();
         } else {
-            console.log('обнуляем');
-            navContainer.style.left = 0;
+          navContainer.style.left = 0;
         }
       }
     },
