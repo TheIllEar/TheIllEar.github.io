@@ -336,6 +336,9 @@ window.ready(() => {
         navContainer.style.left = '';
         if (position <= -total * 0.5) {
           navBtn.click();
+        } else {
+            console.log('обнуляем');
+            navContainer.style.left = 0;
         }
       }
     },
