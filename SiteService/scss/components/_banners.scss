@@ -1,0 +1,43 @@
+.banner {
+  background-image: url('../img/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &-container {
+    text-align: center;
+    color: $white;
+    position: relative;
+  }
+  .owl-item {
+    height: 100%;
+  }
+  &__item {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: calc((100vw - 320px) / (1400 - 320) * (36 - 18) + 18px);
+      padding-bottom: 50px;
+    }
+    .btn {
+      padding: 10px 25px;
+      margin: -10px 0 10px 0;
+      border-radius: 50px;
+      color: $white;
+      background-color: #36aab5;
+      font-size: 20px;
+      font-weight: bold;
+      border: 3px solid #36aab5;
+      @media (max-width: 745px) {
+        padding: 4px 13px;
+        font-size: 16px;
+      }
+      &:hover {
+        border: 3px solid $white;
+        transition: color 0.2s linear, border-bottom-color 0.15s linear 0.25s, border-left-color 0.2s linear 0.3s, border-top-color 0.3s linear 0.4s, border-right-color 0.4s linear 0.5s;
+      }
+    }
+  }
+}

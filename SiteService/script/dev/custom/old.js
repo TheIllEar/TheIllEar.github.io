@@ -6,14 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let banner of bannerBtn) {
     banner.addEventListener('click', function() {
-      // modalForm.style.display = "block";
       modalForm.classList.add('modal-form--visible');
     });
 
     closeBtn.addEventListener('click', function() {
-      // modalForm.style.display = "none";
       modalForm.classList.remove('modal-form--visible')
-    });
+    }); 
 
     document.addEventListener('keydown', function(evt) {
       if (evt.keyCode === 27) {
@@ -117,34 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
       cookie.classList.add('cookie--active');
     }
   }, 2000);
-
-  //MODAL MENU//////////////////
-  const burger = document.querySelector('.burger__img');
-  const modalMenu = document.querySelector('.modal-menu');
-  const modalMenuClose = modalMenu.querySelector('.modal-menu-close__btn');
-  const navContainer = document.querySelector('.nav-container');
-
-  burger.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    // navContainer.style.display = 'none';
-    modalMenu.classList.add('modal-menu--visible');
-    // nav.style.marginBottom = '25px';
-  });
-
-  modalMenuClose.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    // navContainer.style.display = 'block';
-    modalMenu.classList.remove('modal-menu--visible');
-    // nav.style.marginBottom = '0px';
-  });
-
-  //LANG//////////////////
-  const langCurrent = document.querySelector('.lang__current');
-  const lang = document.querySelector('.lang-list');
-  langCurrent.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    lang.classList.toggle('lang-list--visible');
-  })
 
   //SLIDERS//////////////////
   $('.owl-carousel-projects').owlCarousel({

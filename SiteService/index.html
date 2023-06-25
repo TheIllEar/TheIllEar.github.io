@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -60,15 +60,6 @@
               <span class="info__tel"><a href="tel:+79242805020">+7(924)280-50-20 </a><a href="tel:+79841392050"> +7(984)139-20-50</a></span>
             </div>
           </div>
-          <div class="lang">
-            <div class="lang-box">
-              <a class="lang__current"href="#">RU</a>
-              <ul class="lang-list">
-                <li class="lang-list__item"><a href="#" class="lang-list__link">RU</a></li>
-                <li class="lang-list__item"><a href="#" class="lang-list__link">ENG</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </header>
@@ -91,10 +82,10 @@
           </div>
         </div>
         <div class="burger">
-          <img class="burger__img" src="img/menu.svg" alt="Menu">
+          <img class="burger__img" src="img/menu.svg" alt="Menu" data-app-nav-btn>
         </div>
       </div>
-      <div class="modal-menu">
+      <!-- <div class="modal-menu">
         <div class="modal-menu-close">
           <span class="modal-menu-close__btn">&times;</span>
         </div>
@@ -106,8 +97,33 @@
           <li class="modal-menu-list__item"><a href="#partners" class="modal-menu-list__link">Партнеры</a></li>
           <li class="modal-menu-list__item"><a href="#contacts" class="modal-menu-list__link">Контакты</a></li>
         </ul>
+      </div> -->
+    </nav>
+    <!-- sideNav -->
+    <nav class="nav-bar" data-app-nav-container>
+      <div class="toggle-menu" data-app-nav-btn>
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+      <div class="nav-bar__content">
+        <ul class="nav-list">
+          
+            <li class="nav-list__item">
+              <a href="#" class="nav-link">Title</a>
+            </li>
+          
+        </ul>
+        <div class="nav-bar__footer">
+          <div class="mail">
+            <a href="mailto:diada.prod@gmail.com" class="mail__link">diada.prod@gmail.com</a>
+          </div>
+          <!-- Social -->
+        </div>
       </div>
     </nav>
+    <div class="nav-shape" data-app-shape></div>
+    <!-- /// -->
     <section class="banner">
       <div class="banner-container container-fluid wow fadeInDown carousel owl-carousel owl-carousel-banner">
         <div class="banner__item">
@@ -430,14 +446,9 @@
       <span class="close">&times;</span>
       <img alt="" src="#" class="modal-content">
     </div>
-    <script src="script/jquery.min.js"></script>
-    <script src="script/bootstrap.min.js"></script>
-    <script src="script/owl.carousel.min.js"></script>
-    <script src="script/mail.js"></script>
-    <script src="script/script.js"></script>
-    <script src="script/wow.js"></script>
-    <script>
+    <script src="script/dist/main.js"></script>
+    <!-- <script>
       new WOW().init();
-    </script>
+    </script> -->
   </body>
 </html>
