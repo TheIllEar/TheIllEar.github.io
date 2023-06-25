@@ -6,6 +6,17 @@
 body {
   background: $white;
   font-family: 'Roboto', sans-serif;
+  &.disabled-scroll {
+    overflow: hidden;
+    touch-action: none;
+    .nav-shape {
+      overflow: hidden;
+      touch-action: none;
+    }
+    .container {
+      pointer-events: none;
+    }
+  }
 }
 
 .container-fluid {
@@ -34,7 +45,6 @@ body {
       left: -50px;
       span {
         padding: 0 10px 0 10px;
-
       }
     }
     button.owl-next {
@@ -91,7 +101,6 @@ body {
   }
 }
 
-
 /////ASK///////////////////////////////////////////////
 .ask {
   text-align: center;
@@ -110,8 +119,8 @@ body {
   }
   &__img {
     background-repeat: no-repeat;
-       -o-object-fit: cover;
-          object-fit: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
     background-position: center;
     position: absolute;
     transform: rotate(-45deg);
