@@ -1,6 +1,11 @@
+@import './libs/normalize';
+@import './libs/animate';
+@import './libs/photoswipe';
+
 @import './custom/variables';
 @import './custom/mixins';
 @import './custom/animations';
+
 
 @import './base/base';
 
@@ -13,4 +18,5 @@
 @import './components/partners';
 @import './components/forms';
 @import './components/cookie';
+@import './components/slider';
 @import './components/footer';

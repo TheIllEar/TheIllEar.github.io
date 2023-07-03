@@ -7,7 +7,7 @@
    *
    *  ############################################################
    */
-  app.modules.sideMobileMenu = {
+  app.modules.sideMobileMenu = { 
     _selectors: {
       body: 'body',
       nav_container: '[data-app-nav-container]',
@@ -25,7 +25,7 @@
       this._mobileMenuHandler();
     },
 
-    _listeners() {},
+    _listeners() {}, 
 
     _hammerInit() {
       if (window.innerWidth < 720) {

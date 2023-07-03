@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background: $white;
   font-family: 'Roboto', sans-serif;
@@ -20,11 +24,7 @@ body {
 }
 
 .container-fluid {
-  max-width: 1400px;
-  padding: 0 60px;
-  @media (max-width: 575px) {
-    padding: 0 30px;
-  }
+  padding: 0 $mobile_offset;
 }
 
 //CAROUSEL//////////////////////////////////
@@ -258,5 +258,12 @@ body {
       border-radius: 100%;
       background-color: $mars;
     }
+  }
+}
+
+@include breakpoint($tablet) {
+  .container-fluid {
+    max-width: 1400px;
+    padding: 0 $desktop_offset;
   }
 }

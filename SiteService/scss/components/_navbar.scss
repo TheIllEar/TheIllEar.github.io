@@ -1,6 +1,5 @@
 .nav-bar {
-  background-color: $white;
-  // @include gradient(300deg, $color_orange_light, $color_accent);
+  background-color: $color_white;
   position: fixed;
   z-index: 20;
   top: 0;
@@ -15,22 +14,56 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     width: 100%;
+  }
+  &__header {
+    width: 100%;
+    height: 60px;
+    padding: 6px 0px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -8px 20px 2px $color_grey2;
+    .logo {
+      padding: 0 5px 0 10px;
+    }
+    .info__address {
+      font-weight: 500;
+      line-height: 21px;
+    }
+  }
+  &__footer {
+    margin-top: auto;
+    position: absolute;
+    // bottom: 20px;
+    bottom: 0;
+    width: 100%;
+
+    border-top: 1px dotted $color_accent;
+    .mail {
+      margin-bottom: 15px;
+      &__link {
+        letter-spacing: 1px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    .info {
+      flex-direction: column;
+    }
   }
 }
 
 .toggle {
   left: 0;
-  // box-shadow: $default_shadow;
   &-menu {
     position: fixed;
-    top: 10px;
-    // right: $mobile_offset;
+    top: 6px;
+    right: 8px;
     width: 40px;
-    height: 30px;
+    height: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -38,23 +71,22 @@
     border-radius: 5px;
     cursor: pointer;
     .line {
-      background-color: $mars;
+      background-color: $textblue;
       width: 100%;
       height: 3px;
-      // border-radius: $little_radius;
       transition: transform 0.2s ease-out;
     }
   }
   .line1 {
-    // @include gradient(300deg, $color_orange_light, $color_accent);
-    transform: scale(0.9) rotateZ(-45deg) translate(-6px, 6px);
+    background-color: $color_accent;
+    transform: scale(0.9) rotateZ(-45deg) translate(-6px, 8px);
   }
   .line2 {
     display: none;
   }
   .line3 {
-    // @include gradient(300deg, $color_orange_light, $color_accent);
-    transform: scale(0.9) rotateZ(45deg) translate(-6px, -5px);
+    background-color: $color_accent;
+    transform: scale(0.9) rotateZ(45deg) translate(-8px, -8px);
   }
 }
 .toggle + .nav-shape {
@@ -69,11 +101,10 @@
   opacity: 0.3;
 }
 .nav-link {
-  // color: $color_white;
-  // font-size: 21px;
-  font-size: 44px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: 2px;
+  padding: 0;
   position: relative;
 }
 
@@ -81,8 +112,7 @@
   background-color: $white;
 }
 .nav-list {
-  // padding-bottom: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 110px;
   overflow: scroll;
   height: calc(100% - 150px);
   width: 100%;
@@ -90,10 +120,12 @@
   flex-direction: column;
   justify-content: center;
   &__item {
-    text-align: center;
-    padding: 10px 0;
+    padding: 6px 0;
+    margin-left: 12px;
   }
   .nav-link {
+    color: $textblue;
+    line-height: 34px;
     &.active {
       @include fake() {
         left: 0;
@@ -101,28 +133,12 @@
         width: 100%;
         height: 2px;
         opacity: 0.8;
-        background-color: $white;
+        background-color: $color_accent;
       }
     }
   }
 }
-.nav-bar__footer {
-  margin-top: auto;
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  .mail {
-    margin-bottom: 15px;
-    &__link {
-      // color: $color_main;
-      letter-spacing: 1px;
-      // font-size: 17px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-  }
-}
+
 @include breakpoint(450px) {
   .nav-bar {
     width: 290px;
