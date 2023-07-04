@@ -3,13 +3,25 @@
   margin: 0;
 }
 
-a {
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    height: 3px;
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: $color_accent;
+  }
+  scrollbar-width: thin;
 }
 
 body {
+  @include transition();
   background: $white;
   font-family: 'Roboto', sans-serif;
+  pointer-events: none;
+  opacity: 0.5;
   &.disabled-scroll {
     overflow: hidden;
     touch-action: none;
@@ -23,82 +35,17 @@ body {
   }
 }
 
-.container-fluid {
-  padding: 0 $mobile_offset;
+a {
+  text-decoration: none;
 }
 
-//CAROUSEL//////////////////////////////////
-.owl-carousel {
-  .owl-stage-outer {
-    @media (max-width: 420px) {
-      height: 370px;
-    }
-  }
-  .owl-nav {
-    button {
-      position: absolute;
-      top: 40%;
-      transform: translate(0, -50%);
-      outline: none;
-    }
-    button.owl-prev {
-      left: -50px;
-      span {
-        padding: 0 10px 0 10px;
-      }
-    }
-    button.owl-next {
-      right: -50px;
-      span {
-        padding: 0 10px 0 10px;
-      }
-    }
-    span {
-      font-size: 22px;
-      line-height: 0;
-      color: $mars;
-      background: $white;
-      border: 1px solid $mars;
-      border-radius: 50%;
-      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
-      transition: 0.3s;
-      &:hover {
-        color: $white;
-        background: $mars;
-        border: 1px solid $white;
-      }
-    }
-  }
-  .owl-dots {
-    text-align: center;
-    padding-bottom: 30px;
-    .owl-dot {
-      outline: none;
-      button {
-        position: absolute;
-        top: 40%;
-        transform: translate(0, -50%);
-        right: -60px;
-      }
-      span {
-        background: $mars;
-        opacity: 0.6;
-        border-radius: 50%;
-        padding: 0px 6px;
-        font-size: 10px;
-        margin: 2px;
-        vertical-align: middle;
-        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
-      }
-    }
-    .owl-dot.active {
-      span {
-        opacity: 1;
-        padding: 0px 8px;
-        font-size: 13px;
-      }
-    }
-  }
+.app-load {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.container-fluid {
+  padding: 0 $mobile_offset;
 }
 
 /////ASK///////////////////////////////////////////////
@@ -263,7 +210,15 @@ body {
 
 @include breakpoint($tablet) {
   .container-fluid {
-    max-width: 1400px;
+    max-width: $max_container;
     padding: 0 $desktop_offset;
+  }
+}
+
+@include breakpoint($desktop) {
+  html {
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
   }
 }

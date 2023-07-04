@@ -31,11 +31,14 @@
         buttons: '[data-app-pswp-buttons]',
       },
     },
-    // _classes: {
-    //   has_thumbs: 'has-thumbs',
-    // },
+    _classes: {
+      pagination: 'pagination',
+      navigation: 'navigation',
+      loop: 'loop',
+    },
     _data: {
       slider_name: 'appSlider',
+      slider_autoplay: 'appSliderAutoplay',
     },
 
     _vars: {
@@ -64,40 +67,52 @@
 
       if (containers.length) {
         containers.forEach((productContainer) => {
-           
           const sliders = productContainer.querySelectorAll('.swiper-slide'),
             sliderContainer = productContainer.closest(this._selectors.slider_container),
             // sliderContainerWidth = sliderContainer.clientWidth,
             sliderName = productContainer.dataset[this._data.slider_name],
-            // navigation = productContainer.closest('.wrapper').querySelector(this._selectors.navigation),
-            // navigationLeft = productContainer.closest('.wrapper').querySelector(this._selectors.navigation_left),
-            // navigationRight = productContainer.closest('.wrapper').querySelector(this._selectors.navigation_right),
+            sliderAutoplay = productContainer.dataset[this._data.slider_autoplay],
             _setting = {
               slidesPerView: 1,
               grabCursor: true,
-            //   navigation: {
-            //     prevEl: navigationLeft,
-            //     nextEl: navigationRight,
-            //   },
-              // loop: true,
-              // autoplay: {
-              //   delay: 4500,
-              // },
-              on: {
-                init() {
-                  // this.el.addEventListener('mouseenter', (e) => {
-                  //   this.autoplay.stop();
-                  // });
-                  // this.el.addEventListener('mouseleave', () => {
-                  //   this.autoplay.start();
-                  // });
-                  // this.el.addEventListener('touchMove', () => {
-                  //   this.autoplay.stop();
-                  // });
-                },
+            };
+          if (productContainer.classList.contains(this._classes.pagination)) {
+            _setting.pagination = {
+              el: '.swiper-pagination',
+              clickable: true,
+              type: 'bullets',
+            };
+          }
+          if (productContainer.classList.contains(this._classes.navigation)) {
+            const navigationLeft = productContainer.closest('.slider').querySelector(this._selectors.navigation_left),
+              navigationRight = productContainer.closest('.slider').querySelector(this._selectors.navigation_right);
+
+            _setting.navigation = {
+              prevEl: navigationLeft,
+              nextEl: navigationRight,
+            };
+          }
+          if (productContainer.classList.contains(this._classes.loop)) {
+            _setting.loop = true;
+          }
+          if (sliderAutoplay) {
+            _setting.autoplay = {
+              delay: sliderAutoplay,
+            };
+            _setting.on = {
+              init() {
+                this.el.addEventListener('mouseenter', (e) => {
+                  this.autoplay.stop();
+                });
+                this.el.addEventListener('mouseleave', () => {
+                  this.autoplay.start();
+                });
+                this.el.addEventListener('touchMove', () => {
+                  this.autoplay.stop();
+                });
               },
             };
-
+          }
           //   sliderContainer.style.width = `${sliderContainerWidth}px`;
           //   if (navigation) {
           //     navigation.style.width = `${sliderContainerWidth}px`;
@@ -154,14 +169,15 @@
           //     }
           //   }
           let swiperMain = new Swiper(productContainer, _setting);
-          console.log(_setting);
-          console.log(swiperMain);
           this._vars.sliders[sliderName] = swiperMain;
-          //   swiperMain.on('slideChange', function () {
-          //     if (Object.keys(that._vars.iframes).length) {
-          //       that._playVideoHandler(swiperMain);
-          //     }
-          //   });
+          swiperMain.on('slideChange', function () {
+            // if (Object.keys(that._vars.iframes).length) {
+            //   that._playVideoHandler(swiperMain);
+            // }
+            if (this.slides[this.activeIndex].classList.contains('loading')) {
+              app.modules.lazyLoad.itemLazyLoadHandler(this.slides[this.activeIndex]);
+            }
+          });
         });
       }
     },

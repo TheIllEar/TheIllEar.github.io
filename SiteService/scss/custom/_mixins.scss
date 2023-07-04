@@ -28,21 +28,21 @@
   }
 }
 
-// @mixin loading() {
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: radial-gradient(circle farthest-corner at center, $color_accent, $color_orange_light 85%);
-//     background-size: 600% 100%;
-//     animation: preloader 4s ease infinite;
-//     transform: scale(2) rotate(210deg);
-//     z-index: 2;
-//   }
-// }
+@mixin loading() {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle farthest-corner at center, $color_accent, $color_accent_light 85%);
+    background-size: 600% 100%;
+    animation: preloader 4s ease infinite;
+    transform: scale(2) rotate(210deg);
+    z-index: 2;
+  }
+}
 
 @mixin fake($after: true) {
   position: relative;
@@ -62,44 +62,42 @@
 }
 
 //Fonts
-// @mixin fs($title) {
-//   @if ($title == 'card-title') {
-//     font-size: $font_size_title_mobile;
-//     @include breakpoint($tablet) {
-//       font-size: $font_size_title_tablet;
-//     }
-//     @include breakpoint($desktop) {
-//       font-size: $font_size_title_desktop;
-//     }
-//     @include breakpoint($large) {
-//       font-size: $font_size_title_large;
-//     }
-//   }
-//   @if ($title == 'card-kind') {
-//     font-size: $font_size_kind_mobile;
-//     @include breakpoint($tablet) {
-//       font-size: $font_size_kind_tablet;
-//     }
-//     @include breakpoint($desktop) {
-//       font-size: $font_size_kind_desktop;
-//     }
-//     @include breakpoint($large) {
-//       font-size: $font_size_kind_large;
-//     }
-//   }
-//   @if ($title == 'content') {
-//     font-size: $font_size_kind_mobile;
-//     @include breakpoint($tablet) {
-//       font-size: $font_size_kind_tablet;
-//     }
-//     @include breakpoint($desktop) {
-//       font-size: $font_size_kind_desktop;
-//     }
-//     @include breakpoint($large) {
-//       font-size: $font_size_kind_large;
-//     }
-//   }
-// }
+@mixin fs($title) {
+  @if ($title == 'logo-descr') {
+    font-size: $font_logo_descr_mobile;
+    @include breakpoint($tablet) {
+      font-size: $font_logo_descr_tablet;
+    }
+    @include breakpoint($desktop) {
+    }
+    @include breakpoint($large) {
+    }
+  }
+  @if ($title == 'banners-title') {
+    color: $color_white;
+    font-size: $font_banners_title_mobile;
+    @include breakpoint($tablet) {
+      font-size: $font_banners_title_tablet;
+    }
+    @include breakpoint($desktop) {
+    }
+    @include breakpoint($large) {
+    }
+  }
+  @if ($title == 'btn-title') {
+    color: $color_white;
+    font-size: $font_btn_title_mobile;
+    font-weight: 500;
+    @include breakpoint($tablet) {
+      font-size: $font_btn_title_tablet;
+      // font-weight: 700;
+    }
+    @include breakpoint($desktop) {
+    }
+    @include breakpoint($large) {
+    }
+  }
+}
 
 //Transition
 @mixin transition($type: all) {
@@ -116,4 +114,93 @@
 @mixin gradient($rotate: 0, $from, $to) {
   //add rotate
   background: linear-gradient(#{$rotate}, #{$from} 0%, #{$to} 100%);
+}
+
+@mixin btn() {
+  padding: 12px 16px;
+  border-radius: $little_radius;
+  background-color: $color_accent;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 2px $color_accent;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  //Hover Effect
+  transition: color 0.25s;
+
+  &::before,
+  &::after {
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  // This covers the top & right borders (expands right, then down)
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  // And this the bottom & left borders (expands left, then up)
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  // Hover styles
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: $color_white; // Make borders visible
+    border-right-color: $color_white;
+    transition: width 0.25s ease-out,
+      // Width expands first
+      height 0.25s ease-out 0.25s; // And then height
+    border-radius: $little_radius;
+  }
+
+  &:hover::after {
+    border-bottom-color: $color_white; // Make borders visible
+    border-left-color: $color_white;
+    transition: border-color 0s ease-out 0.5s,
+      // Wait for ::before to finish before showing border
+      width 0.25s ease-out 0.5s,
+      // And then exanding width
+      height 0.25s ease-out 0.75s; // And finally height
+    border-radius: $little_radius;
+  }
+  &.parallel {
+    &:hover {
+      color: $color_white;
+    }
+
+    // Start ::after in same position as ::before
+    &::after {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover::after {
+      transition: // Animate height first, then width
+        height 0.25s ease-out, width 0.25s ease-out 0.25s;
+    }
+  }
 }

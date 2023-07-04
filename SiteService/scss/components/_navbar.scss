@@ -25,7 +25,8 @@
     padding: 6px 0px;
     display: flex;
     align-items: center;
-    box-shadow: 0 -8px 20px 2px $color_grey2;
+    box-sizing: border-box;
+    box-shadow: $default_shadow;
     .logo {
       padding: 0 5px 0 10px;
     }
@@ -37,7 +38,6 @@
   &__footer {
     margin-top: auto;
     position: absolute;
-    // bottom: 20px;
     bottom: 0;
     width: 100%;
 
@@ -54,16 +54,24 @@
       flex-direction: column;
     }
   }
+  &.toggle {
+    .toggle {
+      &-menu {
+        top: 6px;
+        height: 40px;
+      }
+    }
+  }
 }
 
 .toggle {
   left: 0;
   &-menu {
     position: fixed;
-    top: 6px;
+    top: 11px;
     right: 8px;
     width: 40px;
-    height: 40px;
+    height: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

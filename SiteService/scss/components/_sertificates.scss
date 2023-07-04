@@ -8,13 +8,13 @@
     color: $textblue;
     padding: 65px 0 40px;
     position: relative;
-    @media (max-width: 680px) {
-      font-size: 25px;
-      padding: 25px 0 20px;
-    }
-    @media (max-width: 390px) {
-      font-size: 22px;
-    }
+    // @media (max-width: 680px) {
+    //   font-size: 25px;
+    //   padding: 25px 0 20px;
+    // }
+    // @media (max-width: 390px) {
+    //   font-size: 22px;
+    // }
   }
   h2::after {
     content: '';
@@ -27,21 +27,21 @@
     width: 95px;
     height: 3px;
     background-color: $mars;
-    @media (max-width: 680px) {
-      bottom: 13px;
-    }
+    // @media (max-width: 680px) {
+    //   bottom: 13px;
+    // }
   }
   &-row {
     justify-content: center;
     align-items: center;
   }
   .certificate {
-    @media (max-width: 530px) {
-      padding: 0 5px;
-    }
-    @media (max-width: 400px) {
-      padding: 0 2px;
-    }
+    // @media (max-width: 530px) {
+    //   padding: 0 5px;
+    // }
+    // @media (max-width: 400px) {
+    //   padding: 0 2px;
+    // }
     &__img {
       width: 100%;
       border-radius: 5px;
@@ -72,18 +72,18 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    @media (max-width: 960px) {
-      width: 38vw;
-    }
-    @media (max-width: 700px) {
-      width: 42vw;
-    }
-    @media (max-width: 1025px) and (max-height: 1377px) {
-      width: 80vw;
-    }
-    @media (max-width: 550px) and (max-height: 850px) {
-      width: 83vw;
-    }
+    // @media (max-width: 960px) {
+    //   width: 38vw;
+    // }
+    // @media (max-width: 700px) {
+    //   width: 42vw;
+    // }
+    // @media (max-width: 1025px) and (max-height: 1377px) {
+    //   width: 80vw;
+    // }
+    // @media (max-width: 550px) and (max-height: 850px) {
+    //   width: 83vw;
+    // }
   }
   .caption {
     margin: auto;
@@ -135,38 +135,38 @@
 }
 
 ////CERTIFICATE CAROUSEL////////////////////////
-.owl-carousel-certificates {
-  text-align: center;
-  .owl-stage-outer {
-    @media (max-width: 839px) {
-      margin-bottom: 20px;
-    }
-  }
-}
-.owl-carousel-certificates .owl-nav.disabled {
-  display: initial;
-  @media (max-width: 839px) {
-    display: none;
-  }
-}
-.owl-carousel-certificates .owl-dots {
-  display: none;
-  @media (max-width: 839px) {
-    display: initial;
-  }
-}
-.owl-carousel-certificates .owl-stage-outer {
-  @media (max-width: 420px) {
-    height: 100%;
-  }
-}
-.owl-carousel-certificates .owl-stage {
-  display: flex;
-  align-items: center;
-}
-.owl-carousel-certificates .owl-nav {
-  button.owl-prev,
-  button.owl-next {
-    top: 50%;
-  }
-}
+// .owl-carousel-certificates {
+//   text-align: center;
+//   .owl-stage-outer {
+//     @media (max-width: 839px) {
+//       margin-bottom: 20px;
+//     }
+//   }
+// }
+// .owl-carousel-certificates .owl-nav.disabled {
+//   display: initial;
+//   @media (max-width: 839px) {
+//     display: none;
+//   }
+// }
+// .owl-carousel-certificates .owl-dots {
+//   display: none;
+//   @media (max-width: 839px) {
+//     display: initial;
+//   }
+// }
+// .owl-carousel-certificates .owl-stage-outer {
+//   @media (max-width: 420px) {
+//     height: 100%;
+//   }
+// }
+// .owl-carousel-certificates .owl-stage {
+//   display: flex;
+//   align-items: center;
+// }
+// .owl-carousel-certificates .owl-nav {
+//   button.owl-prev,
+//   button.owl-next {
+//     top: 50%;
+//   }
+// }

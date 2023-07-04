@@ -8,6 +8,7 @@ $large: 1560px;
 //Colors
 $color_main: #f8f8f8;
 $color_accent: #44d4e2;
+$color_accent_light: #9ae3e9;
 $color_white: #fff;
 $color_grey: #fafafa;
 $color_grey2: #e6e6e6;
@@ -25,37 +26,19 @@ $textblue: #303030;
 $textgray: #7C8595;
 
 //Fonts
-// $font_size_nav_mobile: 16px;
-// $font_size_nav_tablet: 18px;
 
-$font_size_nav_mobile: 19px;
-$font_size_nav_tablet: 19px;
+// Logo descriptor
+$font_logo_descr_mobile: 22px;
+$font_logo_descr_tablet: 24px;
 
-// $font_size_footer_nav_mobile: 14px;
-// $font_size_footer_nav_tablet: 17px;
+// Banners title
+$font_banners_title_mobile: 22px;
+$font_banners_title_tablet: 24px;
 
-$font_size_footer_nav_mobile: 16px;
-$font_size_footer_nav_tablet: 19px;
+// Btn title
+$font_btn_title_mobile: 17px;
+$font_btn_title_tablet: 19px;
 
-// $font_size_title_mobile: 16px;
-// $font_size_title_tablet: 18px;
-// $font_size_title_desktop: 21px;
-// $font_size_title_large: 25px;
-
-$font_size_title_mobile: 26px;
-$font_size_title_tablet: 26px;
-$font_size_title_desktop: 21.5px;
-$font_size_title_large: 21.5px;
-
-// $font_size_kind_mobile: 13px;
-// $font_size_kind_tablet: 15px;
-// $font_size_kind_desktop: 18px;
-// $font_size_kind_large: 22px;
-
-$font_size_kind_mobile: 20px;
-$font_size_kind_tablet: 20px;
-$font_size_kind_desktop: 16px;
-$font_size_kind_large: 16px;
 
 //Radius
 $little_radius: 4px;
@@ -68,10 +51,7 @@ $mobile_offset: 12px;
 $desktop_offset: 24px;
 
 //Shadows
-$default_shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
+$default_shadow: 0 -8px 20px 2px $color_grey2;
 
 //Other
-$max_container: 1200px;
-// $shadow_default: 0 0 30px -10px $color_grey2;
-$shadow_default: 0 0 22px 2px $color_grey2;
-$shadow_default_bottom: 0 8px 12px -2px $color_grey2;
+$max_container: 1400px;

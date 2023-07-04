@@ -1,0 +1,14 @@
+.loading {
+  @include loading();
+  position: relative;
+  overflow: hidden;
+  &__item {
+    position: relative;
+    z-index: 6;
+    opacity: 0;
+  }
+}
+.loaded {
+  @include transition();
+  opacity: 1;
+}

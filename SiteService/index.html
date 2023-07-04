@@ -84,19 +84,6 @@
           </div> -->
         </div>
       </div>
-      <!-- <div class="modal-menu">
-        <div class="modal-menu-close">
-          <span class="modal-menu-close__btn">&times;</span>
-        </div>
-        <ul class="modal-menu-list">
-          <li class="modal-menu-list__item"><a href="#services" class="modal-menu-list__link">Направления</a></li>
-          <li class="modal-menu-list__item"><a href="#projects" class="modal-menu-list__link">Проекты</a></li>
-          <li class="modal-menu-list__item"><a href="#about" class="modal-menu-list__link">О компании</a></li>
-          <li class="modal-menu-list__item"><a href="#certificates" class="modal-menu-list__link">Документация</a></li>
-          <li class="modal-menu-list__item"><a href="#partners" class="modal-menu-list__link">Партнеры</a></li>
-          <li class="modal-menu-list__item"><a href="#contacts" class="modal-menu-list__link">Контакты</a></li>
-        </ul>
-      </div> -->
     </nav>
     <!-- sideNav -->
     <div class="nav-bar" data-app-nav-container>
@@ -141,21 +128,29 @@
     <div class="nav-shape" data-app-shape></div>
     <!-- /// -->
     <section class="banner slider wow fadeInDown" data-app-slider-container>
-      <div class="swiper-container banner-container container-fluid" data-app-swiper-container data-app-slider="banners">
+      <!-- data-app-slider-autoplay="3400"  -->
+      <div class="swiper-container banner-container container-fluid pagination loop" data-app-swiper-container data-app-slider="banners">
         <div class="swiper-wrapper">
-          <div class="banner__item swiper-slide">
-            <h2>Работы под ключ в области проводных и беспроводных телекоммуникаций</h2>
-            <input class="btn" type="button" value="Свяжитесь с нами">
+          <div class="swiper-slide loading">
+            <div class="banner__item loading__item" data-app-catalog-img="./img/banner.jpg">
+              <h2>Работы под ключ в области проводных и беспроводных телекоммуникаций</h2>
+              <button class="btn">Свяжитесь с нами</button>
+            </div>
           </div>
-          <div class="banner__item swiper-slide">
-            <h2>Установка электронных систем безопасности<br>Организация мониторинга и оповещения</h2>
-            <input class="btn" type="button" value="Свяжитесь с нами">
+          <div class=" swiper-slide loading">
+            <div class="banner__item loading__item" data-app-catalog-img="./img/banner.jpg">
+              <h2>Установка электронных систем безопасности<br>Организация мониторинга и оповещения</h2>
+              <button class="btn">Свяжитесь с нами</button>
+            </div>
           </div>
-          <div class="banner__item swiper-slide">
-            <h2>Изготовление тематических конструкций<br>Установка освещения и светодиодных композиций</h2>
-            <input class="btn" type="button" value="Свяжитесь с нами">
+          <div class=" swiper-slide loading">
+            <div class="banner__item loading__item" data-app-catalog-img="./img/banner.jpg">
+              <h2>Изготовление тематических конструкций<br>Установка освещения и светодиодных композиций</h2>
+              <button class="btn">Свяжитесь с нами</button>
+            </div>
           </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
     <div class="modal-form">
