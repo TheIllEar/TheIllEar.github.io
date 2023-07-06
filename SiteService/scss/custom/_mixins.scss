@@ -12,6 +12,13 @@
   background-position: #{$pos};
 }
 
+//Mask-img
+@mixin mask-bg($size: cover, $pos: center, $repeat: no-repeat) {
+  mask-repeat: #{$repeat};
+  mask-size: #{$size};
+  mask-position: #{$pos};
+}
+
 @mixin padding-hack($padding: 50%, $after: true) {
   @if ($after) {
     &::after {
@@ -91,6 +98,19 @@
     @include breakpoint($tablet) {
       font-size: $font_btn_title_tablet;
       // font-weight: 700;
+    }
+    @include breakpoint($desktop) {
+    }
+    @include breakpoint($large) {
+    }
+  }
+  @if ($title == 'nav-item') {
+    font-weight: 600;
+    line-height: 34px;
+    color: $textblue;
+    font-size: $font_nav_title_mobile;
+    @include breakpoint($tablet) {
+      font-size: $font_nav_title_tablet;
     }
     @include breakpoint($desktop) {
     }
