@@ -1,11 +1,9 @@
 @import './libs/normalize';
-@import './libs/animate';
-@import './libs/photoswipe';
-
 @import './custom/variables';
 @import './custom/mixins';
 @import './custom/animations';
-
+@import './libs/animate';
+@import './libs/photoswipe';
 
 @import './base/base';
 
@@ -16,6 +14,8 @@
 @import './components/sertificates';
 @import './components/projects';
 @import './components/partners';
+@import './components/ask';
+@import './components/about';
 @import './components/forms';
 @import './components/cookie';
 @import './components/slider';

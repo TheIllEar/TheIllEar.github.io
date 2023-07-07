@@ -101,55 +101,6 @@
     background-color: $color_accent;
     transform: scale(0.9) rotateZ(45deg) translate(-7px, -8px);
   }
-  .nav-list {
-    margin-bottom: 110px;
-    margin-top: 6px;
-    overflow: scroll;
-    height: calc(100% - 150px);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    &__item {
-      .nav-img {
-        @include mask-bg('contain');
-        background-color: $textblue;
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-      }
-      &--1 {
-        .nav-img {
-          mask-image: url(../img/icons/service.svg);
-        }
-      }
-      &--2 {
-        .nav-img {
-          mask-image: url(../img/icons/projects.svg);
-        }
-      }
-      &--3 {
-        .nav-img {
-          mask-image: url(../img/icons/about.svg);
-        }
-      }
-      &--4 {
-        .nav-img {
-          mask-image: url(../img/icons/documents.svg);
-        }
-      }
-      &--5 {
-        .nav-img {
-          mask-image: url(../img/icons/partners.svg);
-        }
-      }
-      &--6 {
-        .nav-img {
-          mask-image: url(../img/icons/contacts.svg);
-        }
-      }
-    }
-  }
 }
 .toggle + .nav-shape {
   position: fixed;
@@ -180,10 +131,49 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   &__item {
-    padding: 6px 0;
+    padding: 4px 0;
     margin-left: 12px;
+    .nav-img {
+      @include mask-bg('contain');
+      background-color: $textblue;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    &--1 {
+      .nav-img {
+        mask-image: url(../img/icons/service.svg);
+        height: 26px;
+      }
+    }
+    &--2 {
+      .nav-img {
+        mask-image: url(../img/icons/projects.svg);
+      }
+    }
+    &--3 {
+      .nav-img {
+        mask-image: url(../img/icons/about.svg);
+      }
+    }
+    &--4 {
+      .nav-img {
+        mask-image: url(../img/icons/documents.svg);
+        height: 27px;
+      }
+    }
+    &--5 {
+      .nav-img {
+        mask-image: url(../img/icons/partners.svg);
+        height: 27px;
+      }
+    }
+    &--6 {
+      .nav-img {
+        mask-image: url(../img/icons/contacts.svg);
+      }
+    }
   }
   .nav-link {
     display: flex;

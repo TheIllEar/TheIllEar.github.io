@@ -8,12 +8,12 @@
       .swiper-slide {
         flex-shrink: 0;
         transition-property: transform;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
       }
     }
   }
-  // &-pagination {
-  //   display: none;
-  // }
   .pagination {
     .swiper-pagination {
       position: absolute;
@@ -23,7 +23,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 70px;
+      width: fit-content;;
       height: 30px;
       margin: 0 auto 30px;
       &-bullet {
@@ -36,6 +36,9 @@
         transition: 0.2s;
         box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
         cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
         &-active {
           opacity: 1;
           width: 18px;
@@ -43,99 +46,51 @@
         }
       }
     }
-    // .owl-carousel {
-    //   .owl-stage-outer {
-    //     // @media (max-width: 420px) {
-    //     //   height: 370px;
-    //     // }
-    //   }
-    //   .owl-nav {
-    //     button {
-    //       position: absolute;
-    //       top: 40%;
-    //       transform: translate(0, -50%);
-    //       outline: none;
-    //     }
-    //     button.owl-prev {
-    //       left: -50px;
-    //       span {
-    //         padding: 0 10px 0 10px;
-    //       }
-    //     }
-    //     button.owl-next {
-    //       right: -50px;
-    //       span {
-    //         padding: 0 10px 0 10px;
-    //       }
-    //     }
-    //     span {
-    //       font-size: 22px;
-    //       line-height: 0;
-    //       color: $mars;
-    //       background: $white;
-    //       border: 1px solid $mars;
-    //       border-radius: 50%;
-    //       box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
-    //       transition: 0.3s;
-    //       &:hover {
-    //         color: $white;
-    //         background: $mars;
-    //         border: 1px solid $white;
-    //       }
-    //     }
-    //   }
-    // }
   }
-  //   .swiper-scrollbar {
-  //     background-color: $color_grey3;
-  //     &-drag {
-  //       height: 4px;
-  //       background-color: $color_accent;
-  //       cursor: grabbing;
-  //     }
-  //   }
-
-  //   @include breakpoint($tablet) {
-  //     &-pagination {
-  //       display: none;
-  //       position: absolute;
-  //       display: flex;
-  //       justify-content: space-between;
-  //       top: 0;
-  //       left: 0;
-  //       right: 0;
-  //       margin: 0 auto;
-  //       width: 70%;
-  //       .arrow {
-  //         transition: 0.3s;
-  //         position: absolute;
-  //         display: flex;
-  //         top: 0;
-  //         justify-content: center;
-  //         align-items: center;
-  //         width: 22%;
-  //         height: 318px;
-  //         border-radius: 50%;
-  //         cursor: pointer;
-  //         outline: none;
-  //         z-index: 40;
-  //         opacity: 0.04;
-  //         &-prev {
-  //           @include bg(65%, 'center left');
-  //           background-image: url(../../img/arrow.svg);
-  //           left: -22%;
-  //         }
-  //         &-next {
-  //           @include bg(65%, 'center right');
-  //           background-image: url(../../img/arrow_reverse.svg);
-  //           right: -22%;
-  //         }
-  //         &:hover,
-  //         &:focus,
-  //         &:active {
-  //           opacity: 0.08;
-  //         }
-  //       }
-  //     }
-  //   }
+  .slider-navigation {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    .arrow {
+      @include transition();
+      @include bg();
+      background-color: $color_accent;
+      border: 1px solid $color_accent;
+      border-radius: 50%;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 0.8;
+      }
+      &.swiper-button-disabled {
+        background-color: $color_grey3;
+        border-color: $color_grey3;
+      }
+    }
+    .arrow-prev {
+      background-image: url(../img/icons/arrow.svg);
+      transform: rotate(270deg);
+      margin-right: 8px;
+    }
+    .arrow-next {
+      background-image: url(../img/icons/arrow.svg);
+      transform: rotate(90deg);
+    }
+    &.line {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(100% - 63px);
+        height: 1px;
+        border-bottom: 1px dashed $color_accent;
+      }
+    }
+  }
 }

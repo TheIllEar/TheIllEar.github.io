@@ -20,30 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  //MODAL DOCUMENTS/////////////////////////////////////////////////
-  let modalBlock = document.querySelector('.modal');
-  let modalContent = document.querySelector('.modal-content');
-  let imgAll = document.querySelectorAll('.certificate__img');
-  let img = document.querySelector('.certificate__img');
-  let closeContent = document.querySelector('.close');
-
-  imgAll.forEach((img) => {
-    img.addEventListener('click', function() {
-      modalBlock.style.display = 'block';
-      modalContent.src = this.src;
-    });
-  });
-
-  closeContent.addEventListener('click', function() {
-    modalBlock.style.display = "none"; 
-  });
-
-  document.addEventListener('keydown', function(evt) {
-    if (evt.keyCode === 27) {
-      modalBlock.style.display = "none";
-    }
-  });
-
   //NAV-FIXED/////////////////////////////////////////////////
   // let header = document.querySelector('.header');
   // let nav = document.querySelector('.nav');

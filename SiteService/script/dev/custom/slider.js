@@ -44,6 +44,45 @@
     _vars: {
       sliders: {},
       iframes: {},
+      settings: {
+        banners: {
+          slidesPerView: 1,
+          grabCursor: true,
+        },
+        projects: {
+          slidesPerView: 1,
+          grabCursor: true,
+          spaceBetween: 12,
+          breakpoints: {
+            [550]: {
+              slidesPerView: 2,
+            },
+            [720]: {
+              spaceBetween: 24,
+              slidesPerView: 3,
+            },
+          },
+        },
+        certificates: {
+          slidesPerView: 1,
+          grabCursor: true,
+          spaceBetween: 12,
+          breakpoints: {
+            [400]: {
+              slidesPerView: 2,
+            },
+            [720]: {
+              spaceBetween: 24,
+              slidesPerView: 3,
+            },
+          },
+        },
+        partners: {
+          slidesPerView: 2,
+          grabCursor: true,
+          spaceBetween: 12,
+        },
+      },
     },
 
     /**
@@ -51,7 +90,7 @@
      */
     init() {
       this.initSliders();
-      //   this.initPhotoSwipe();
+      this.initPhotoSwipe();
       //   setTimeout(() => {
       //     this.reInitSliders();
       //   }, 750);
@@ -72,10 +111,7 @@
             // sliderContainerWidth = sliderContainer.clientWidth,
             sliderName = productContainer.dataset[this._data.slider_name],
             sliderAutoplay = productContainer.dataset[this._data.slider_autoplay],
-            _setting = {
-              slidesPerView: 1,
-              grabCursor: true,
-            };
+            _setting = this._vars.settings[sliderName];
           if (productContainer.classList.contains(this._classes.pagination)) {
             _setting.pagination = {
               el: '.swiper-pagination',
@@ -97,7 +133,7 @@
           }
           if (sliderAutoplay) {
             _setting.autoplay = {
-              delay: sliderAutoplay,
+              delay: parseInt(sliderAutoplay),
             };
             _setting.on = {
               init() {
@@ -113,67 +149,9 @@
               },
             };
           }
-          //   sliderContainer.style.width = `${sliderContainerWidth}px`;
-          //   if (navigation) {
-          //     navigation.style.width = `${sliderContainerWidth}px`;
-          //     navigation.style.width = `${sliderContainerWidth}px`;
-          //     setTimeout(() => {
-          //       navigation.querySelectorAll('.arrow').forEach((_arrow) => {
-          //         _arrow.style.height = `${sliderContainer.clientHeight}px`;
-          //       });
-          //     }, 100);
-          //   }
-          //   sliders.forEach((_slide) => {
-          //     if (_slide.querySelector('iframe')) {
-          //       this._iframeHandler(_slide);
-          //     }
-          //   });
-          //   if (productContainer.classList.contains(this._classes.has_thumbs) && body.querySelector(`[data-app-slider-thumbs='${sliderName}']`)) {
-          //     let thumbs = body.querySelector(`[data-app-slider-thumbs='${sliderName}']`),
-          //       thumbsContainer = thumbs.closest(this._selectors.thumbs_container),
-          //       thumbsContainerWidth = thumbsContainer.clientWidth,
-          //       thumbsSetting = {
-          //         slidesPerView: 2,
-          //         watchSlidesVisibility: true,
-          //         watchSlidesProgress: true,
-          //         grabCursor: true,
-          //         breakpoints: {
-          //           [320]: {
-          //             slidesPerView: 3,
-          //           },
-          //           [720]: {
-          //             slidesPerView: 4,
-          //           },
-          //         },
-          //       },
-          //       swiperThumbs = new Swiper(thumbs, thumbsSetting);
-          //     thumbsContainer.style.width = `${thumbsContainerWidth}px`;
-          //     if (swiperThumbs) {
-          //       if ((window.innerWidth >= 320 && sliders.length > 3) || (window.innerWidth >= 720 && sliders.length > 4)) {
-          //         _setting.scrollbar = {
-          //           el: '.swiper-scrollbar',
-          //           draggable: true,
-          //         };
-          //       }
-          //       _setting.thumbs = {
-          //         swiper: swiperThumbs,
-          //       };
-          //       swiperThumbs.on('sliderMove', function (swiperThumbs, e) {
-          //         this.el.classList.add('dont-touch');
-          //       });
-          //       swiperThumbs.on('touchEnd', function (swiperThumbs, e) {
-          //         setTimeout(() => {
-          //           this.el.classList.remove('dont-touch');
-          //         }, 200);
-          //       });
-          //     }
-          //   }
           let swiperMain = new Swiper(productContainer, _setting);
           this._vars.sliders[sliderName] = swiperMain;
           swiperMain.on('slideChange', function () {
-            // if (Object.keys(that._vars.iframes).length) {
-            //   that._playVideoHandler(swiperMain);
-            // }
             if (this.slides[this.activeIndex].classList.contains('loading')) {
               app.modules.lazyLoad.itemLazyLoadHandler(this.slides[this.activeIndex]);
             }
@@ -188,7 +166,6 @@
 
       if (photoItems.length && container) {
         let itemsOption = [];
-
         photoItems.forEach((_photo, i) => {
           itemsOption.push({
             src: _photo.dataset.appPhotoswipePhoto,

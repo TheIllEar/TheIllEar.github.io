@@ -1,0 +1,43 @@
+.row-about {
+  justify-content: center;
+}
+.about {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.05);
+  padding-bottom: 30px;
+  h2 {
+    @include fs('h2');
+  }
+  &-picture {
+    margin-bottom: 15px;
+    &__img {
+      @include bg();
+      @include padding-hack(80%);
+      background-image: url(../img/about.svg);
+      width: 100%;
+      padding-top: 7px;
+    }
+  }
+  &-description {
+    padding-left: 5px;
+    &__text {
+      @include fs('item');
+      margin-bottom: 5px;
+      padding-left: 8px;
+    }
+    &__dot {
+      visibility: hidden;
+      position: relative;
+    }
+    &__dot::before {
+      content: '';
+      position: absolute;
+      visibility: visible;
+      left: -15px;
+      top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: $mars;
+    }
+  }
+}

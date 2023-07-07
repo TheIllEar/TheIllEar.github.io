@@ -24,9 +24,6 @@
     margin-left: 5px;
     strong {
       @include fs('logo-descr');
-      font-weight: 500;
-      font-size: 22px;
-      color: $textblue;
     }
   }
 }
@@ -202,24 +199,4 @@
   //   -webkit-animation-duration: 0.5s;
   //   animation-duration: 0.5s;
   // }
-  @-webkit-keyframes shownav {
-    0% {
-      opacity: 0;
-      top: -70px;
-    }
-    100% {
-      opacity: 0.9;
-      top: 0;
-    }
-  }
-  @keyframes shownav {
-    0% {
-      opacity: 0;
-      top: -70px;
-    }
-    100% {
-      opacity: 0.9;
-      top: 0;
-    }
-  }
 }
