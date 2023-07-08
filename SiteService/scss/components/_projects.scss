@@ -1,7 +1,7 @@
 //PROJECTS/////////////////////////////////////////
 .projects {
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.05);
-  background-color: $gray;
+  box-shadow: $default_shadow_inset;
+  background-color: $color_grey;
   h2 {
     @include fs('h2');
   }
@@ -9,11 +9,11 @@
     padding-bottom: 20px;
   }
   .project {
-    background-color: $white;
+    background-color: $color_white;
     border-radius: $medium_radius;
     border: 1px solid $color_grey2;
     border-bottom: 3px solid $color_accent;
-    box-shadow: 1px 3px 5px 2px $color_grey2;
+    box-shadow: $default_shadow_card;
     margin-bottom: 20px;
     overflow: hidden;
     &__img {

@@ -10,22 +10,15 @@ $color_main: #f8f8f8;
 $color_accent: #44d4e2;
 $color_accent_light: #9ae3e9;
 $color_white: #fff;
-$color_grey: #fafafa;
+$color_grey: #FAFBFC;
 $color_grey2: #e6e6e6;
 $color_grey3: #e5e5e5;
-$color_orange_light: #fa700b;
-$color_orange_dark: #f83e11;
-$color_purple: #551a8b;
 $color_black: #000;
-$color_black2: #353535;
-
-$mars: #44d4e2;
-$white: #fff;
-$gray: #FAFBFC;
 $textblue: #303030;
 $textgray: #7C8595;
 
-//Fonts
+
+/////////FONTS
 
 // Logo descriptor
 $font_logo_descr_mobile: 22px;
@@ -64,6 +57,8 @@ $desktop_offset: 24px;
 
 //Shadows
 $default_shadow: 0 -8px 20px 2px $color_grey2;
+$default_shadow_card: 0 4px 6px 1px $color_grey2;
+$default_shadow_inset: inset 0px 1px 4px $color_grey2;
 
 //Other
 $max_container: 1400px;

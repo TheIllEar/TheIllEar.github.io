@@ -1,4 +1,63 @@
-///FORMS/////////////////////////////////////////////
+.form {
+  &__input,
+  textarea {
+    width: 100%;
+    max-width: 570px;
+    background: $color_white;
+    border: 1px solid $color_grey2;
+    border-radius: $little_radius;
+    color: $textgray;
+    padding: 10px;
+    box-sizing: border-box;
+    &:focus,
+    &:active {
+      border: 1px solid $color_accent;
+      outline: none;
+    }
+  }
+  &__input {
+    margin: 0 auto 20px;
+    height: 35px;
+  }
+  textarea {
+    margin: 0 auto;
+    height: 100px;
+    resize: none;
+  }
+  &__btn {
+    @include fs('btn-title');
+    @include btn();
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  .consent__text {
+    margin-bottom: 15px;
+    text-align: center;
+    label {
+      font-size: 12px;
+      color: $textblue;
+      display: inline;
+      vertical-align: middle;
+      position: relative;
+      margin-left: 20px;
+    }
+    input[type='checkbox'] {
+      position: absolute;
+      top: -1px;
+      left: -17px;
+    }
+    a {
+      text-decoration: none;
+      color: $color_accent;
+      &:hover {
+        transition: 0.3s;
+        color: pink;
+      }
+    }
+  }
+}
 .modal-form {
   opacity: 0;
   visibility: hidden;
@@ -11,57 +70,49 @@
   height: 100%;
   padding: 50px 30px 0;
   background-color: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
   .form {
     margin: 0 auto;
     position: absolute;
+    box-sizing: border-box;
     left: 0;
     right: 0;
     top: 50%;
     transform: translate(0, -50%);
-    background: $white;
-    border: 2px solid $mars;
+    background: $color_white;
+    border: 1px solid $color_accent;
     box-shadow: 3px 4px 10px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+    border-radius: $big_radius;
     max-width: 545px;
     width: 100%;
-    padding: 30px;
-    @media (max-width: 570px) {
-      width: 94%;
-    }
-    h2 {
-      text-align: center;
-      font-size: 30px;
-      color: $textblue;
-      @media (max-width: 1280px) {
-        font-size: 2.5vw;
-      }
-      @media (max-width: 660px) {
-        font-size: 4vw;
-      }
-      @media (max-width: 440px) {
-        font-size: 5vw;
-      }
-    }
-    p {
-      text-align: center;
-      color: $textblue;
-      @media (max-width: 520px) {
-        font-size: 12px;
-      }
-    }
-    .form-close {
+    padding: $mobile_offset;
+    &-close {
       position: absolute;
-      right: 20px;
-      top: 10px;
+      right: $mobile_offset;
+      top: 2px;
       font-size: 40px;
-      cursor: pointer;
       color: $textblue;
+      cursor: pointer;
       &:hover,
       &:focus {
-        color: $mars;
+        color: $color_accent;
         text-decoration: none;
-        cursor: pointer;
       }
+    }
+    h2 {
+      @include fs('h2');
+    }
+    p {
+      @include fs('item');
+      text-align: center;
+      color: $textblue;
+      margin-bottom: 12px;
+    }
+    .consent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
@@ -69,97 +120,19 @@
   opacity: 1;
   visibility: visible;
 }
-.form {
-  &__input {
-    margin: 0 auto 20px;
-    height: 35px;
-    display: block;
-    width: 100%;
-    max-width: 570px;
-    background: #ffffff;
-    border: 2px solid #f1f1f1;
-    border-radius: 5px;
-    color: #958e8e;
-    padding: 10px;
-    @media (max-width: 520px) {
-      font-size: 12px;
-      padding: 7px;
-      height: 32px;
-    }
-    &:focus,
-    &:active {
-      border: 2px solid $mars;
-      outline: none;
-    }
-  }
-  textarea {
-    width: 100%;
-    max-width: 570px;
-    margin: 0 auto 15px;
-    height: 100px;
-    background: #ffffff;
-    border: 2px solid #f1f1f1;
-    border-radius: 5px;
-    color: #958e8e;
-    padding: 10px;
-    @media (max-width: 520px) {
-      font-size: 12px;
-      padding: 7px;
-      height: 80px;
-    }
-    &:focus,
-    &:active {
-      border: 2px solid $mars;
-      outline: none;
-    }
-  }
-  &__btn {
-    padding: 7px 42px;
-    border-radius: 10px;
-    color: $mars;
-    background-color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    border: inherit;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    transition: 0.3s;
-    outline: none;
-    display: block;
-    margin: 0 auto;
-    transition: 0.3s;
-    outline: none;
-    @media (max-width: 520px) {
-      font-size: 17px;
-      padding: 5px 35px;
-    }
-    &:hover {
-      color: $white;
-      background-color: $mars;
-      transform: none;
-    }
-  }
-  .consent__text {
-    margin-top: 15px;
-    text-align: center;
-    label {
-      color: $textblue;
-      display: inline;
-      font-size: 11px;
-      vertical-align: middle;
-      position: relative;
-      margin-left: 20px;
-    }
-    input[type='checkbox'] {
-      position: absolute;
-      top: -1px;
-      left: -17px;
-    }
-    a {
-      text-decoration: none;
-      color: $mars;
-      &:hover {
-        transition: 0.3s;
-        color: pink;
+@include breakpoint($tablet) {
+  .modal-form {
+    .form {
+      padding: $desktop_offset;
+      &-close {
+        top: 8px;
+        right: $desktop_offset;
+      }
+      h2 {
+        padding: 20px 0 25px;
+      }
+      p {
+        margin-bottom: 30px;
       }
     }
   }

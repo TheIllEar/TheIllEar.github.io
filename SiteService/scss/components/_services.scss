@@ -1,18 +1,15 @@
 //SERVICES///////////////////////////////////////////////////////
 .services {
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: $default_shadow_inset;
   h2 {
     @include fs('h2');
   }
   .service {
-    // display: flex;
-    // flex-direction: column;
     border-radius: $medium_radius;
     border: 1px solid $color_grey2;
     border-bottom: 3px solid $color_accent;
-    box-shadow: 1px 3px 5px 2px $color_grey2;
+    box-shadow: $default_shadow_card;
     text-align: center;
-    // padding: 17px;
     padding: $mobile_offset;
     margin-bottom: 20px;
     transition: 0.3s;
@@ -22,7 +19,7 @@
     //   flex-direction: column;
     // }
     // &:hover {
-    //   border-bottom: 4px solid $mars;
+    //   border-bottom: 4px solid $color_accent;
     //   box-shadow: 5px 7px 7px rgba(0, 0, 0, 0.25);
     // }
     &__img {

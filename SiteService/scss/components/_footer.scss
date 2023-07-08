@@ -1,67 +1,67 @@
-//FOOTER/////////////////////////////////////////////
 .footer {
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.05);
-  background-color: $gray;
+  box-shadow: $default_shadow_inset;
+  background-color: $color_grey;
   padding-bottom: 30px;
   text-align: center;
   h2 {
-    text-align: center;
-    color: $textblue;
-    padding: 65px 0 40px;
-    position: relative;
-    @media (max-width: 680px) {
-      font-size: 25px;
-      padding: 25px 0 20px;
-    }
-    @media (max-width: 390px) {
-      font-size: 22px;
-    }
-  }
-  h2::after {
-    content: '';
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    display: block;
-    margin: 0 auto;
-    width: 95px;
-    height: 3px;
-    background-color: $mars;
-    @media (max-width: 680px) {
-      bottom: 13px;
-    }
+    @include fs('h2');
   }
   .info {
     padding: 10px 0px;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+    &__block {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     &__address {
-      padding: 0px 0 3px;
+      line-height: 20px;
+      margin-bottom: 3px;
+      display: block;
+      padding-left: 17px;
+      text-align: right;
+      max-width: 135px;
+      &::after {
+        width: 15px;
+        height: 15px;
+        left: 0;
+      }
     }
     &__tel {
-      margin-left: 15px;
-      padding: 3px 0;
+      a {
+        font-size: 14px;
+        width: fit-content;
+        padding-left: 20px;
+        &::after {
+          width: 15px;
+          height: 15px;
+          left: 0;
+        }
+      }
+      // margin-left: 15px;
+      // padding: 3px 0;
     }
-  }
-  hr {
-    margin-bottom: 30px;
   }
   .copyright {
-    padding-top: 10px;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 29px;
-    color: $mars;
-    @media (max-width: 920px) {
-      font-size: 14px;
-    }
-    @media (max-width: 500px) {
-      font-size: 12px;
-    }
+    font-size: 14px;
+    line-height: 22px;
+    width: 100%;
+    color: $color_accent;
+    padding-top: 10px;
+    border-top: 1px solid $color_grey2;
+    // @media (max-width: 920px) {
+    //   font-size: 14px;
+    // }
+    // @media (max-width: 500px) {
+    //   font-size: 12px;
+    // }
     a {
       border-bottom: 1px solid;
-      color: $mars;
+      color: $color_accent;
       &:hover {
         text-decoration: none;
         transition: 0.3s;
@@ -73,13 +73,13 @@
 
 ///FOOTER FORM////////////////////////////////
 .footer {
-    .form {
-      &__input {
-        height: 48px;
-        max-width: 590px;
-      }
-      textarea {
-        max-width: 590px;
-      }
+  .form {
+    &__input {
+      height: 48px;
+      max-width: 590px;
+    }
+    textarea {
+      max-width: 590px;
     }
   }
+}

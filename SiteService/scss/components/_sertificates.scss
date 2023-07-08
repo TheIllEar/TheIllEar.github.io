@@ -1,13 +1,9 @@
-//SERTIFICATES//////////////////////////////////////////
 .certificates {
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.05);
-  background-color: $gray;
+  box-shadow: $default_shadow_inset;
+  background-color: $color_grey;
   padding-bottom: 30px;
   h2 {
     @include fs('h2');
-  }
-  .swiper-wrapper {
-    align-items: center;
   }
   .certificate {
     &__img {
@@ -23,6 +19,17 @@
     &:nth-child(2) {
       .certificate__img {
         @include padding-hack(75%);
+      }
+    }
+  }
+  &.slider {
+    .pagination {
+      .swiper-wrapper {
+        align-items: center;
+        padding-bottom: 25px;
+      }
+      .swiper-pagination {
+        margin-bottom: 20px;
       }
     }
   }

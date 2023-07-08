@@ -1,12 +1,12 @@
 //COOKIE//////////////
 .cookie {
-  background: $mars;
+  background: $color_accent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   text-align: center;
-  color: $white;
+  color: $color_white;
   position: fixed;
   left: 0;
   right: 0;
@@ -45,8 +45,8 @@
     // }
   }
   &__btn {
-    background: $white;
-    color: $mars;
+    background: $color_white;
+    color: $color_accent;
     padding: 7px 10px;
     border-radius: 8px;
     height: -webkit-fit-content;

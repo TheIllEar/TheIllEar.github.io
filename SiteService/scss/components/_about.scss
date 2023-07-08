@@ -2,7 +2,7 @@
   justify-content: center;
 }
 .about {
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: $default_shadow_inset;
   padding-bottom: 30px;
   h2 {
     @include fs('h2');
@@ -37,7 +37,7 @@
       width: 6px;
       height: 6px;
       border-radius: 100%;
-      background-color: $mars;
+      background-color: $color_accent;
     }
   }
 }
