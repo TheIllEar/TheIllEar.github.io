@@ -1,23 +1,27 @@
 .nav-bar {
-  background-color: $color_white;
   position: fixed;
-  z-index: 20;
   top: 0;
-  left: -250px;
+  left: -290px;
   right: 100%;
-  height: 100%;
-  width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s;
+  height: 100%;
+  width: 78vw;
+  min-width: 250px;
+  max-width: 290px;
+  transition: 0.2s;
+  z-index: 20;
   &__content {
+    @include transition();
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%;
     width: 100%;
+    background-color: $color_white;
+    opacity: 0.6;
   }
   &__header {
     width: 100%;
@@ -40,18 +44,14 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-
-    border-top: 1px dotted $color_accent;
-    .mail {
-      margin-bottom: 15px;
-      &__link {
-        letter-spacing: 1px;
-        font-size: 18px;
-        font-weight: 600;
-      }
-    }
+    border-top: 1px dashed $color_accent;
     .info {
       flex-direction: column;
+      &-mail,
+      &-location a {
+        width: fit-content;
+        margin-bottom: 8px;
+      }
     }
   }
   &.toggle {
@@ -60,6 +60,9 @@
         top: 7px;
         height: 35px;
       }
+    }
+    .nav-bar__content {
+      opacity: 1;
     }
   }
 }
@@ -134,44 +137,53 @@
   &__item {
     padding: 4px 0;
     margin-left: 12px;
+    width: fit-content;
     .nav-img {
-      @include mask-bg('contain');
-      background-color: $textblue;
-      width: 30px;
-      height: 30px;
+      @include bg('contain');
+      // @include mask-bg('contain');
+      // background-color: $textblue;
+      width: 29px;
+      height: 29px;
       margin-right: 10px;
     }
     &--1 {
       .nav-img {
-        mask-image: url(../img/icons/service.svg);
-        height: 26px;
+        // mask-image: url(../img/icons/service.svg);
+        background-image: url(../img/icons/service.svg);
+        height: 23px;
       }
     }
     &--2 {
       .nav-img {
-        mask-image: url(../img/icons/projects.svg);
+        // mask-image: url(../img/icons/projects.svg);
+        background-image: url(../img/icons/projects.svg);
       }
     }
     &--3 {
       .nav-img {
-        mask-image: url(../img/icons/about.svg);
+        // mask-image: url(../img/icons/about.svg);
+        background-image: url(../img/icons/about.svg);
       }
     }
     &--4 {
       .nav-img {
-        mask-image: url(../img/icons/documents.svg);
-        height: 27px;
+        // mask-image: url(../img/icons/documents.svg);
+        background-image: url(../img/icons/documents.svg);
+        height: 25px;
       }
     }
     &--5 {
       .nav-img {
-        mask-image: url(../img/icons/partners.svg);
-        height: 27px;
+        // mask-image: url(../img/icons/partners.svg);
+        background-image: url(../img/icons/partners.svg);
+        height: 26px;
       }
     }
     &--6 {
       .nav-img {
-        mask-image: url(../img/icons/contacts.svg);
+        // mask-image: url(../img/icons/contacts.svg);
+        background-image: url(../img/icons/contacts.svg);
+        height: 27px;
       }
     }
   }

@@ -46,27 +46,12 @@
     }
   }
   .copyright {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
+    @include fs('copyright');
     width: 100%;
-    color: $color_accent;
     padding-top: 10px;
     border-top: 1px solid $color_grey2;
-    // @media (max-width: 920px) {
-    //   font-size: 14px;
-    // }
-    // @media (max-width: 500px) {
-    //   font-size: 12px;
-    // }
     a {
       border-bottom: 1px solid;
-      color: $color_accent;
-      &:hover {
-        text-decoration: none;
-        transition: 0.3s;
-        color: pink;
-      }
     }
   }
 }

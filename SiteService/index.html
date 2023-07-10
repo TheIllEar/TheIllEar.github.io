@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+  <head itemscope="" itemtype="https://schema.org/WebSite">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Сайт Сервис - Разработка систем безопасности на территории Сахалинской области и регионах Дальнего Востока</title>
     <meta name="description" content="Разработка систем безопасности на территории Сахалинской области и регионах Дальнего Востока">
     <meta name="keywords" content="Сайт Сервис, Проектная разработка, Разработка и проектирование систем безопасности, Разработка и проектирование светодиодных композиций, Прокладка волоконно-оптических линий связи, Прокладка кабельных сетей, Настройка и установка систем управления освещением, Лазерная и гобо-проекция, Монтаж и установка систем безопасности и оповещения, Установка видеонаблюдения, Установка систем контроля и управления доступом, Разработка комплексов мониторинга радиационной обстановки и уровня химической загрязнённости воздуха, Монтаж конструкций и настройкой светодиодных элементов, Программирование и создание анимации">
+    
+    <!-- Open Graph-->
+    <meta property="og:site_name" content="2stk.ru" />
+    <link rel="canonical" href="https://2stk.ru" />
+    <link itemprop="url" href="https://2stk.ru" />
+    <meta property="og:url" content="https://2stk.ru" />
+    <meta property="og:title" content="Сайт Сервис - Разработка систем безопасности на территории Сахалинской области и регионах Дальнего Востока" />
+    <meta property="og:description" content="Разработка систем безопасности на территории Сахалинской области и регионах Дальнего Востока" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" itemprop="image" content="https://2stk.ru/img/logo.png"/>
+
     <!-- Контролирует поведение поисковых систем при индексации страницы -->
-    <meta name="robots" content="index,follow"><!-- Все поисковые системы -->
-    <meta name="googlebot" content="index,follow"><!-- Указание отдельно для Google -->
+    <meta name="robots" content="index,follow,noodp" />
+
+    <!-- Все поисковые системы -->
+    <meta name="googlebot" content="index,follow" />
+
+    <!-- Указание отдельно для Google -->
+    <meta name="google" content="nositelinkssearchbox" />
+
+    <!-- Короткое описание тематики вашего сайта -->
+    <meta name="subject" content="Разработка систем безопасности" />
+
     <!-- From favicon generator -->
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
@@ -18,9 +38,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="img/favicon/site.webmanifest">
     <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <!-- Main styles-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -36,8 +54,13 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/70918948" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <!-- Main styles-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
   </head>
   <body>
+    <!-- Header -->
     <header class="header">
       <div class="header-container container-fluid">
         <div class="row row-header">
@@ -59,6 +82,8 @@
         </div>
       </div>
     </header>
+
+    <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container container-fluid">
         <div class="row row-nav">
@@ -85,7 +110,8 @@
         </div>
       </div>
     </nav>
-    <!-- sideNav -->
+
+    <!-- Mobile Sidebar -->
     <div class="nav-bar" data-app-nav-container>
       <div class="toggle-menu" data-app-nav-btn>
         <div class="line line1"></div>
@@ -125,9 +151,6 @@
               <div class="nav-img"></div> Контакты</a>
             </li>
           </ul>
-          <ul class="modal-menu-list">
-            
-          </ul>
         <div class="nav-bar__footer">
           <div class="info">
             <div class="info-mail">
@@ -144,9 +167,10 @@
       </div>
     </div>
     <div class="nav-shape" data-app-shape></div>
-    <!-- /// -->
+
+    <!-- Banners -->
     <section class="banner slider wow fadeInDown" data-app-slider-container>
-      <div class="swiper-container banner-container container-fluid pagination loop" data-app-slider-autoplay="3400" data-app-swiper-container data-app-slider="banners">
+      <div class="swiper-container banner-container container-fluid pagination loop" data-app-slider-autoplay="4400" data-app-swiper-container data-app-slider="banners">
         <div class="swiper-wrapper">
           <div class="swiper-slide loading">
             <div class="banner__item loading__item" data-app-catalog-img="img/banner.jpg">
@@ -170,6 +194,8 @@
         <div class="swiper-pagination"></div>
       </div>
     </section>
+
+    <!-- Modal -->
     <div class="modal-form">
       <form class="form" action="">
         <h2>Мы готовы ответить!</h2>
@@ -194,6 +220,8 @@
         </div>
       </form>
     </div>
+
+    <!-- Directions -->
     <section class="services" id="services">
       <div class="services-container container-fluid wow fadeInUp">
         <h2>Направления деятельности</h2>
@@ -207,7 +235,6 @@
               </div>
             </div>
           </div>
-
           <div class="service-wrapper col-12 col-md-6">
             <div class="service service-item2">
               <img class="service__img" src="img/service4.png" alt="Беспроводная связь">
@@ -256,6 +283,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Projects -->
     <section class="projects slider" id="projects" data-app-slider-container>
       <h2>Реализованные проекты</h2>
       <div class="projects-container container-fluid swiper-container navigation" data-app-swiper-container data-app-slider="projects">
@@ -366,6 +395,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Ask -->
     <section class="ask">
       <div class="ask-container container-fluid">
         <div class="row row-ask">
@@ -410,6 +441,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Certificates -->
     <section class="certificates slider" data-app-slider-container id="certificates">
       <h2>Наши сертификаты, лицензии, допуски</h2>
       <div class="certificates-container container-fluid swiper-container pagination" data-app-swiper-container data-app-slider="certificates">
@@ -433,6 +466,8 @@
         <div class="swiper-pagination"></div>
       </div>
     </section>
+
+    <!-- Partners -->
     <section class="partners slider" id="partners" data-app-slider-container>
       <h2>Наши партнеры и клиенты</h2>
       <div class="partners-container container-fluid swiper-container navigation" data-app-swiper-container data-app-slider="partners">
@@ -480,6 +515,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
     <footer class="footer" id="contacts">
       <h2>Свяжитесь с нами</h2>
       <div class="footer-container container-fluid wow fadeInUp">
@@ -512,16 +549,16 @@
         <div class="copyright">Copyright © 2020 SiteService. Designed and developed by <a href="https://theillear.github.io/Links/" target="_blank">TheIllEar</a></div>
       </div>
     </footer>
+
+    <!-- Cookie -->
     <div class="cookie">
       <p class="cookie__text">
         Этот сайт использует cookie-файлы, чтобы предоставить лучший пользовательский опыт. Если Вы продолжите использовать сайт, мы будем считать, что Вас это устраивает.
       </p>
       <a href="#" class="cookie__btn">Хорошо</a>
     </div>
-    <!-- <div class="modal">
-      <span class="close">&times;</span>
-      <img alt="" src="#" class="modal-content">
-    </div> -->
+   
+    <!-- Pswp Modal -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
       <!-- Background of PhotoSwipe. 
@@ -592,10 +629,3 @@
     <script src="https://kit.fontawesome.com/3e9be25118.js" crossorigin="anonymous"></script>
   </body>
 </html>
-<!-- - тесты лейблов консента, инпутов в миксин
-- пофиксить мобильный сайдбар
-- seo
-- розовый цвет
-- убрать кругляш в стрелках 
-- пройтись везде и убрать лишнее
--->

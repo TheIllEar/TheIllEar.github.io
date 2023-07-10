@@ -144,6 +144,45 @@
       line-height: 20px;
     }
   }
+  @if ($title == 'consent') {
+    color: $textblue;
+    font-size: $font_consent_mobile;
+    a {
+      color: $color_accent;
+      font-size: $font_consent_mobile;
+      text-decoration: none;
+      &:hover {
+        transition: 0.3s;
+        opacity: 0.7;
+      }
+    }
+    @include breakpoint($tablet) {
+    }
+  }
+  @if ($title == 'copyright') {
+    color: $color_accent;
+    font-weight: 500;
+    font-size: $font_copyright_mobile;
+    line-height: 22px;
+    a {
+      color: $color_accent;
+      font-size: $font_copyright_mobile;
+      &:hover {
+        transition: 0.3s;
+        opacity: 0.7;
+      }
+    }
+    @include breakpoint($tablet) {
+    }
+  }
+  // @if ($title == 'form-element') {
+  //   color: $color_accent;
+  //   font-weight: 500;
+  //   font-size: $font_copyright_mobile;
+  //   line-height: 22px;
+  //   @include breakpoint($tablet) {
+  //   }
+  // }
 }
 
 //Transition

@@ -5,9 +5,6 @@
     position: relative;
     padding: 0;
   }
-  .owl-item {
-    height: 100%;
-  }
   &__item {
     @include bg();
     // height: 60vh;
@@ -25,6 +22,30 @@
     .btn {
       @include fs('btn-title');
       @include btn();
+    }
+    h2,
+    .btn {
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      transform: translateY($mobile_offset);
+    }
+  }
+  .swiper-slide.swiper-slide-active:not(:nth-child(2)) {
+    .banner__item {
+      h2,
+      .btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  .swiper-slide-active:nth-child(2) {
+    .banner__item.loaded {
+      h2,
+      .btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 }

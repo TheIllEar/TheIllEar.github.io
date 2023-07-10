@@ -27,89 +27,6 @@
     }
   }
 }
-.info {
-  position: relative;
-  display: flex;
-  padding: 20px 0;
-  padding-left: 38px;
-  color: $textblue;
-  font-size: calc((100vw - 320px) / (1400 - 320) * (17 - 14) + 17px);
-  font-weight: 500;
-  &-mail {
-    margin-bottom: 5px;
-    &__link {
-      transition: 0.3s;
-      color: $textblue;
-      position: relative;
-      i {
-        position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          left: -25px;
-          top: 0px;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center;
-          background-image: url(../img/email.svg);
-          width: 20px;
-          height: 20px;
-        }
-      }
-      &:hover {
-        color: $color_accent;
-        text-decoration: none;
-      }
-    }
-  }
-  &__address {
-    i {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        left: -24px;
-        top: 0px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-image: url(../img/location.svg);
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-  &__tel {
-    // margin-left: 45px;
-    // @media (max-width: 350px) {
-    //   margin-left: 33px;
-    // }
-    a {
-      position: relative;
-      display: block;
-      color: $textblue;
-      text-decoration: none;
-      transition: 0.3s;
-      margin-bottom: 5px;
-      font-size: calc((100vw - 320px) / (1400 - 320) * (17 - 14) + 17px);
-      &::after {
-        content: '';
-        position: absolute;
-        left: -24px;
-        top: 0px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-image: url(../img/phone.svg);
-        width: 19px;
-        height: 19px;
-      }
-      &:hover {
-        color: $color_accent;
-      }
-    }
-  }
-}
 
 .nav {
   position: fixed;
@@ -121,11 +38,7 @@
   box-shadow: $default_shadow;
   z-index: 10;
   .row-nav {
-    // justify-content: space-between;
     height: 60px;
-    // @media (max-width: 745px) {
-    //   display: none;
-    // }
   }
   // &__logo {
   //   max-width: 55px;
@@ -156,7 +69,7 @@
         position: relative;
         color: $color_white;
         font-weight: 500;
-        font-size: calc((100vw - 320px) / (1400 - 320) * (18 - 13) + 13px);
+        // font-size: calc((100vw - 320px) / (1400 - 320) * (18 - 13) + 13px);
         text-decoration: none;
         // @media (max-width: 1500px) {
         //   font-size: 1.6vw;

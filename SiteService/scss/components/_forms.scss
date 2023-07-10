@@ -36,25 +36,16 @@
     margin-bottom: 15px;
     text-align: center;
     label {
-      font-size: 12px;
-      color: $textblue;
+      @include fs('consent');
+      position: relative;
       display: inline;
       vertical-align: middle;
-      position: relative;
       margin-left: 20px;
     }
     input[type='checkbox'] {
       position: absolute;
       top: -1px;
       left: -17px;
-    }
-    a {
-      text-decoration: none;
-      color: $color_accent;
-      &:hover {
-        transition: 0.3s;
-        color: pink;
-      }
     }
   }
 }

@@ -7,7 +7,7 @@
    *
    *  ############################################################
    */
-  app.modules.sideMobileMenu = { 
+  app.modules.sideMobileMenu = {
     _selectors: {
       body: 'body',
       nav_container: '[data-app-nav-container]',
@@ -19,30 +19,21 @@
       nav_link: 'nav-link',
       toggle: 'toggle',
     },
+    _vars: {
+      position: null,
+    },
+
     init() {
       this._listeners();
       this._hammerInit();
       this._mobileMenuHandler();
     },
 
-    _listeners() {}, 
+    _listeners() {},
 
-    _hammerInit() {
-      if (window.innerWidth < 720) {
-        const body = document.querySelector(this._selectors.body),
-          navContainer = body.querySelector(this._selectors.nav_container),
-          hammertime = new Hammer(navContainer);
-
-        hammertime.on('panleft panright panend', (e) => {
-          console.log('lol', e);
-          // @todo сделать уход сайдбара ровно по курсору, без дерганий, если начинаешь с середины.
-          //   if (e.offsetDirection === 1 && !e.target.classList.contains(this._classes.nav_link)) {
-          this._handleTouch(e, navContainer);
-          //   }
-        });
-      }
-    },
-
+    /**
+     * Инит обработчика мобильного меню
+     */
     _mobileMenuHandler() {
       if (window.innerWidth < 720) {
         const body = document.querySelector(this._selectors.body),
@@ -67,20 +58,47 @@
       }
     },
 
+    /**
+     * Инит либы
+     */
+    _hammerInit() {
+      if (window.innerWidth < 720) {
+        const body = document.querySelector(this._selectors.body),
+          navContainer = body.querySelector(this._selectors.nav_container),
+          hammertime = new Hammer(navContainer);
+
+        hammertime.on('panleft panright panend', (e) => {
+          if (!e.target.classList.contains(this._classes.nav_link)) {
+            this._handleTouch(e, navContainer);
+          }
+        });
+      }
+    },
+
+    /**
+     * Обработка свайпа сайдбара
+     * @param {Event} e
+     * @param {Element} navContainer
+     */
     _handleTouch(e, navContainer) {
       let x = e.center.x,
         total = navContainer.clientWidth,
         position = x - total;
-
-      if (position < 0) navContainer.style.left = x - total + 'px';
+      if (!this._vars.position) {
+        this._vars.position = x - total;
+      } else {
+        position = -(this._vars.position - (x - total));
+      }
+      if (position < 0) navContainer.style.left = position + 'px';
       else if (position >= 0) navContainer.style.left = 0 + 'px';
       if (e.type === 'panend') {
         let navBtn = navContainer.querySelector(this._selectors.nav_btn);
         navContainer.style.left = '';
-        if (position <= -total * 0.5) {
+        this._vars.position = null;
+        if (x - total <= -total * 0.5) {
           navBtn.click();
         } else {
-          navContainer.style.left = 0;
+          navContainer.style.left = '';
         }
       }
     },
