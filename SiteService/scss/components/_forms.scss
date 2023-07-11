@@ -16,13 +16,17 @@
     }
   }
   &__input {
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     height: 35px;
   }
   textarea {
     margin: 0 auto;
     height: 100px;
     resize: none;
+  }
+  &__container {
+    overflow: auto;
+    max-height: calc(100vh - 304px);
   }
   &__btn {
     @include fs('btn-title');

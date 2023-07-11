@@ -4,9 +4,11 @@
   background-color: $color_grey;
   h2 {
     @include fs('h2');
+    padding-left: $mobile_offset;
+    padding-right: $mobile_offset;
   }
   &-container {
-    padding-bottom: 20px;
+    padding-bottom: 35px;
   }
   .project {
     background-color: $color_white;
@@ -18,7 +20,7 @@
     overflow: hidden;
     &__img {
       @include bg();
-      height: 200px;
+      @include padding-hack(70%);
       width: 100%;
       // height: 260px;
       // @media (max-width: 660px) {
@@ -26,7 +28,7 @@
       // }
     }
     &-description {
-      padding: 12px;
+      padding: $mobile_offset;
       margin-bottom: 15px;
       // height: 180px;
       // @media (max-width: 1353px) {

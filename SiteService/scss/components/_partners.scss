@@ -4,6 +4,8 @@
   padding-bottom: 30px;
   h2 {
     @include fs('h2');
+    padding-left: $mobile_offset;
+    padding-right: $mobile_offset;
     color: $color_white;
   }
   .partner {

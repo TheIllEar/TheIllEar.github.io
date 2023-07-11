@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
   //MODAL FORM/////////////////////////////////////////////////////
-  let modalForm = document.querySelector('.modal-form');
-  let bannerBtn = document.querySelectorAll('.banner .btn');
-  let closeBtn = modalForm.querySelector('.form-close');
+  // let modalForm = document.querySelector('.modal-form');
+  // let bannerBtn = document.querySelectorAll('.banner .btn');
+  // let closeBtn = modalForm.querySelector('.form-close');
 
-  for (let banner of bannerBtn) {
-    banner.addEventListener('click', function() {
-      modalForm.classList.add('modal-form--visible');
-    });
+  // for (let banner of bannerBtn) {
+  //   banner.addEventListener('click', function() {
+  //     modalForm.classList.add('modal-form--visible');
+  //   });
 
-    closeBtn.addEventListener('click', function() {
-      modalForm.classList.remove('modal-form--visible')
-    }); 
+  //   closeBtn.addEventListener('click', function() {
+  //     modalForm.classList.remove('modal-form--visible')
+  //   }); 
 
-    document.addEventListener('keydown', function(evt) {
-      if (evt.keyCode === 27) {
-        modalForm.style.display = 'none';
-      }
-    });
-  }
+  //   document.addEventListener('keydown', function(evt) {
+  //     if (evt.keyCode === 27) {
+  //       modalForm.style.display = 'none';
+  //     }
+  //   });
+  // }
 
   //NAV-FIXED/////////////////////////////////////////////////
   // let header = document.querySelector('.header');

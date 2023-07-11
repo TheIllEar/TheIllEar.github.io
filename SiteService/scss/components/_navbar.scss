@@ -203,15 +203,6 @@
   }
 }
 
-@include breakpoint(450px) {
-  .nav-bar {
-    width: 290px;
-    left: -290px;
-  }
-  .toggle {
-    left: 0;
-  }
-}
 @include breakpoint($tablet) {
   .nav-bar {
     display: none;

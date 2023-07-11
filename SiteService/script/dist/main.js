@@ -234,6 +234,57 @@ window.ready(() => {
   /**
    *  ############################################################
    *
+   *                        Modal
+   *
+   *  ############################################################
+   */
+  app.modules.modal = {
+    _selectors: {
+      body: 'body',
+      modal: '.modal-form',
+      btn: '.banner .btn',
+      close: '.form-close',
+    },
+    _classes: {
+      visible: 'modal-form--visible',
+      disable: 'disabled-scroll',
+    },
+    init() {
+      this._modalHandler();
+    },
+    _modalHandler() {
+      const body = document.querySelector(this._selectors.body),
+        modalForm = body.querySelector(this._selectors.modal),
+        bannerBtn = body.querySelectorAll(this._selectors.btn),
+        closeBtn = modalForm.querySelector(this._selectors.close);
+
+      bannerBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          modalForm.classList.add(this._classes.visible);
+          body.classList.add(this._classes.disable);
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+          modalForm.classList.remove(this._classes.visible);
+          body.classList.remove(this._classes.disable);
+        });
+
+        document.addEventListener('keydown', (evt) => {
+          if (evt.keyCode === 27) {
+            // modalForm.style.display = 'none';
+            closeBtn.click();
+          }
+        });
+      });
+    },
+  };
+})();
+
+(function () {
+  'use strict';
+  /**
+   *  ############################################################
+   *
    *                       SideMobileMenu
    *
    *  ############################################################
@@ -338,25 +389,25 @@ window.ready(() => {
 
 document.addEventListener('DOMContentLoaded', function () {
   //MODAL FORM/////////////////////////////////////////////////////
-  let modalForm = document.querySelector('.modal-form');
-  let bannerBtn = document.querySelectorAll('.banner .btn');
-  let closeBtn = modalForm.querySelector('.form-close');
+  // let modalForm = document.querySelector('.modal-form');
+  // let bannerBtn = document.querySelectorAll('.banner .btn');
+  // let closeBtn = modalForm.querySelector('.form-close');
 
-  for (let banner of bannerBtn) {
-    banner.addEventListener('click', function() {
-      modalForm.classList.add('modal-form--visible');
-    });
+  // for (let banner of bannerBtn) {
+  //   banner.addEventListener('click', function() {
+  //     modalForm.classList.add('modal-form--visible');
+  //   });
 
-    closeBtn.addEventListener('click', function() {
-      modalForm.classList.remove('modal-form--visible')
-    }); 
+  //   closeBtn.addEventListener('click', function() {
+  //     modalForm.classList.remove('modal-form--visible')
+  //   }); 
 
-    document.addEventListener('keydown', function(evt) {
-      if (evt.keyCode === 27) {
-        modalForm.style.display = 'none';
-      }
-    });
-  }
+  //   document.addEventListener('keydown', function(evt) {
+  //     if (evt.keyCode === 27) {
+  //       modalForm.style.display = 'none';
+  //     }
+  //   });
+  // }
 
   //NAV-FIXED/////////////////////////////////////////////////
   // let header = document.querySelector('.header');

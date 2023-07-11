@@ -93,7 +93,7 @@
               <strong>Сайт Сервис</strong>
             </div>
           </div>
-          <!-- <div class="nav-block nav-block-left col-10">
+          <div class="nav-block">
             <ul class="nav-list">
               <li class="nav-list__item"><a href="#services" class="nav-list__link">Направления</a></li>
               <li class="nav-list__item"><a href="#projects" class="nav-list__link">Проекты</a></li>
@@ -101,12 +101,10 @@
               <li class="nav-list__item"><a href="#certificates" class="nav-list__link">Документация</a></li>
               <li class="nav-list__item"><a href="#partners" class="nav-list__link">Партнеры</a></li>
             </ul>
-          </div>
-          <div class="nav-block nav-block-right col-2">
             <ul class="nav-list">
               <li class="nav-list__item"><a href="#contacts" class="nav-list__link">Контакты</a></li>
             </ul>
-          </div> -->
+          </div>
         </div>
       </div>
     </nav>
@@ -201,15 +199,17 @@
         <h2>Мы готовы ответить!</h2>
         <p>Оставьте свои контактные данные и мы дадим Вам подробную консультацию о наших услугах</p>
         <span class="form-close">&times;</span>
-        <!-- Hidden Required Fields -->
-        <input type="hidden" name="project_name" value="Site Service">
-        <input type="hidden" name="admin_email" value="info@2stk.ru">
-        <input type="hidden" name="form_subject" value="Baner-Form">
-        <!-- END Hidden Required Fields -->
-        <input type="text" name="Имя" class="form__input" required placeholder="ФИО">
-        <input type="tel" name="Телефон" class="form__input" required placeholder="Ваш телефон">
-        <input type="email" name="Email" class="form__input" required placeholder="Ваш Email">
-        <textarea class="form__textarea" name="Сообщение" rows="8" cols="80" placeholder="Ваши комментарии"></textarea>
+        <div class="form__container">
+          <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="Site Service">
+          <input type="hidden" name="admin_email" value="info@2stk.ru">
+          <input type="hidden" name="form_subject" value="Baner-Form">
+          <!-- END Hidden Required Fields -->
+          <input type="text" name="Имя" class="form__input" required placeholder="ФИО">
+          <input type="tel" name="Телефон" class="form__input" required placeholder="Ваш телефон">
+          <input type="email" name="Email" class="form__input" required placeholder="Ваш Email">
+          <textarea class="form__textarea" name="Сообщение" rows="8" cols="80" placeholder="Ваши комментарии"></textarea>
+        </div>
         <div class="consent">
           <input class="form__btn" type="submit" disabled="disabled" name="submit" id="submit" value="Отправить">
           <div class="consent__text">
@@ -629,3 +629,9 @@
     <script src="https://kit.fontawesome.com/3e9be25118.js" crossorigin="anonymous"></script>
   </body>
 </html>
+<!-- 
+  - паддинги h2
+  - плавный скролл при клике но кнопку формы и в навигации
+  -  js формы
+  - высоту модалки и отключить скролл при появлении модалки
+-->

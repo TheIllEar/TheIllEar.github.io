@@ -1,9 +1,11 @@
 .certificates {
   box-shadow: $default_shadow_inset;
   background-color: $color_grey;
-  padding-bottom: 30px;
+  padding-bottom: 65px;
   h2 {
     @include fs('h2');
+    padding-left: $mobile_offset;
+    padding-right: $mobile_offset;
   }
   .certificate {
     &__img {
@@ -26,10 +28,9 @@
     .pagination {
       .swiper-wrapper {
         align-items: center;
-        padding-bottom: 25px;
       }
       .swiper-pagination {
-        margin-bottom: 20px;
+        margin-bottom: 35px;
       }
     }
   }
