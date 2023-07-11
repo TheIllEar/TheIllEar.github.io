@@ -4,6 +4,7 @@
     text-align: center;
     position: relative;
     padding: 0;
+    max-width: 100%;
   }
   &__item {
     @include bg();
@@ -46,6 +47,21 @@
         transform: translateY(0);
         opacity: 1;
       }
+    }
+  }
+}
+@include breakpoint($tablet) {
+  .banner {
+    margin-top: 0;
+    &__item {
+      height: calc(100vh - 134px);
+    }
+  }
+}
+@include breakpoint($tablet_medium) {
+  .banner {
+    &__item {
+      height: calc(100vh - 148px);
     }
   }
 }

@@ -35,3 +35,16 @@
     }
   }
 }
+@include breakpoint($tablet_medium) {
+  .certificates {
+    &.slider {
+      .pagination {
+        .swiper-pagination {
+          .swiper-pagination-bullet {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

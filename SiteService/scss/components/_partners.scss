@@ -15,10 +15,7 @@
     display: flex;
     justify-content: center;
     border-radius: $little_radius;
-    padding: 0 5px;
-    // @media (max-width: 420px) {
-    //   height: 80%;
-    // }
+    padding: 5px;
     &__img {
       width: 80%;
       object-fit: contain;

@@ -59,8 +59,12 @@
             },
             [720]: {
               spaceBetween: 24,
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
+            [1020]: {
+              spaceBetween: 24,
+              slidesPerView: 3,
+            }
           },
         },
         certificates: {
@@ -73,14 +77,31 @@
             },
             [720]: {
               spaceBetween: 24,
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
+            [1020]: {
+              spaceBetween: 24,
+              slidesPerView: 3,
+            }
           },
         },
         partners: {
           slidesPerView: 2,
           grabCursor: true,
           spaceBetween: 12,
+          breakpoints: {
+            [400]: {
+              slidesPerView: 3,
+            },
+            [720]: {
+              spaceBetween: 24,
+              slidesPerView: 4,
+            },
+            [1020]: {
+              spaceBetween: 24,
+              slidesPerView: 5,
+            }
+          },
         },
       },
     },

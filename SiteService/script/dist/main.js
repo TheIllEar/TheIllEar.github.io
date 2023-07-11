@@ -83,60 +83,64 @@ window.ready(() => {
   app.init();
 });
 
-// (function () {
-//   'use strict';
-//   /**
-//    *  ############################################################
-//    *
-//    *                        Cookies
-//    *
-//    *  ############################################################
-//    */
-//   app.modules.cookies = {
-//     _selectors: {
-//       body: 'body',
-//       container: '[data-app-cookies]',
-//       close: '[data-app-cookies-close]',
-//     },
-//     _class: {
-//       active: 'active',
-//     },
+(function () {
+  'use strict';
+  /**
+   *  ############################################################
+   *
+   *                        Content
+   *
+   *  ############################################################
+   */
+  app.modules.content = {
+    _selectors: {
+      body: 'body',
+      date: '[data-app-year]',
+      date: '[data-app-year]',
+      cookie: '.cookie',
+      cookie_btn: '.cookie__btn',
+    },
+    _class: {
+      active: 'cookie--active',
+    },
 
-//     init() {
-//       this._modalCookiesHandler();
-//     },
+    init() {
+      this._modalCookiesHandler();
+      this._dateHandler();
+    },
 
-//     /**
-//      * Обработка бодалки куки
-//      */
-//     _modalCookiesHandler() {
-//       if (!localStorage.hideCookies) {
-//         let body = document.querySelector(this._selectors.body),
-//           container = body.querySelector(this._selectors.container);
+    /**
+     * Обработка модалки куки
+     */
+    _modalCookiesHandler() {
+      if (!localStorage.getItem('cookieDisplayed')) {
+        const cookie = document.querySelector(this._selectors.cookie),
+          cookieBtn = cookie.querySelector(this._selectors.cookie_btn);
 
-//         if (container) {
-//           let closeBtn = container.querySelector(this._selectors.close);
-//           setTimeout(() => {
-//             container.classList.add(this._class.active);
-//           }, 1600);
-//           closeBtn.addEventListener('click', (e) => {
-//             e.preventDefault();
-//             this._hideModalCookies(container);
-//           });
-//         }
-//       }
-//     },
+        cookieBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          cookie.classList.remove(this._class.active);
+          localStorage.setItem('cookieDisplayed', 'true');
+        });
 
-//     /**
-//      * Скрываем окно
-//      * @param {Element} container
-//      */
-//     _hideModalCookies(container) {
-//       container.classList.remove(this._class.active);
-//       localStorage.hideCookies = true;
-//     },
-//   };
-// })();
+        setTimeout(() => {
+          cookie.classList.add(this._class.active);
+        }, 2000);
+      }
+    },
+
+    /**
+     * Обработка текущей даты
+     */
+    _dateHandler() {
+      const dateContainer = document.querySelector(this._selectors.date);
+
+      if (dateContainer) {
+        dateContainer.textContent = new Date().getFullYear();
+      }
+    },
+  };
+})();
 
 (function () {
   'use strict';
@@ -212,23 +216,86 @@ window.ready(() => {
 
 // $(document).ready(function() {
 
-// 	//E-mail Ajax Send
-// 	$("form").submit(function() { //Change
-// 		var th = $(this);
-// 		$.ajax({
-// 			type: "POST",
-// 			url: "mail.php", //Change
-// 			data: th.serialize()
-// 		}).done(function() {
-// 			alert('«Спасибо! Наш менеджер скоро свяжется с Вами»');
-// 			setTimeout(function() {
-// 				// Done Functions
-// 				th.trigger("reset");
-// 			}, 1000);
-// 		});
-// 		return false;
-// 	});
 // });
+
+(function () {
+  'use strict';
+  /**
+   *  ############################################################
+   *
+   *                        Mail
+   *
+   *  ############################################################
+   */
+  app.modules.mail = {
+    _selectors: {
+      body: 'body',
+      modal: '.modal-form',
+      btn: '.banner .btn',
+      close: '.form-close',
+    },
+    _classes: {
+      visible: 'modal-form--visible',
+      disable: 'disabled-scroll',
+    },
+    init() {
+      this._mailHandler();
+      this._formValidateHandler();
+    },
+
+    _mailHandler() {
+      const body = document.querySelector(this._selectors.body);
+      // 	//E-mail Ajax Send
+      // 	$("form").submit(function() { //Change
+      // 		var th = $(this);
+      // 		$.ajax({
+      // 			type: "POST",
+      // 			url: "mail.php", //Change
+      // 			data: th.serialize()
+      // 		}).done(function() {
+      // 			alert('«Спасибо! Наш менеджер скоро свяжется с Вами»');
+      // 			setTimeout(function() {
+      // 				// Done Functions
+      // 				th.trigger("reset");
+      // 			}, 1000);
+      // 		});
+      // 		return false;
+      // 	});
+    },
+
+    _formValidateHandler() {
+      const form = document.querySelectorAll('form');
+
+      form.forEach((item) => {
+        const formBtn = item.querySelector('.form__btn');
+        const validateElem = (elem) => {
+          if (elem.value == '') {
+            elem.style.borderColor = 'red';
+          } else {
+            elem.style.borderColor = '#41B7CF';
+          }
+        };
+
+        for (let elem of item.elements) {
+          if (!elem.classList.contains('form__checkbox') && !elem.classList.contains('form__btn') && !elem.classList.contains('form__textarea')) {
+            elem.addEventListener('blur', () => {
+              validateElem(elem);
+            });
+          }
+        }
+
+        formBtn.addEventListener('click', (event) => {
+          for (let elem of item.elements) {
+            if (!elem.classList.contains('form__checkbox') && !elem.classList.contains('form__btn') && !elem.classList.contains('form__textarea')) {
+              validateElem(elem);
+            }
+          }
+        });
+      });
+    },
+  };
+})();
+
 (function () {
   'use strict';
   /**
@@ -295,6 +362,8 @@ window.ready(() => {
       nav_container: '[data-app-nav-container]',
       nav_btn: '[data-app-nav-btn]',
       shape: '[data-app-shape]',
+      header: '.header',
+      nav: '.nav',
     },
     _classes: {
       disable: 'disabled-scroll',
@@ -309,9 +378,30 @@ window.ready(() => {
       this._listeners();
       this._hammerInit();
       this._mobileMenuHandler();
+      this._fixMenuHandler();
     },
 
     _listeners() {},
+
+    /**
+     * Инит обработчика фиксированного меню
+     */
+    _fixMenuHandler() {
+      if (window.innerWidth >= 720) {
+        const header = document.querySelector(this._selectors.header),
+          nav = document.querySelector(this._selectors.nav);
+
+        window.onscroll = function showNav() {
+          if (window.pageYOffset > 160) {
+            nav.classList.add('nav--fixed');
+            header.style.marginBottom = '55px';
+          } else {
+            nav.classList.remove('nav--fixed');
+            header.style.marginBottom = '0';
+          }
+        };
+      }
+    },
 
     /**
      * Инит обработчика мобильного меню
@@ -387,188 +477,6 @@ window.ready(() => {
   };
 })();
 
-document.addEventListener('DOMContentLoaded', function () {
-  //MODAL FORM/////////////////////////////////////////////////////
-  // let modalForm = document.querySelector('.modal-form');
-  // let bannerBtn = document.querySelectorAll('.banner .btn');
-  // let closeBtn = modalForm.querySelector('.form-close');
-
-  // for (let banner of bannerBtn) {
-  //   banner.addEventListener('click', function() {
-  //     modalForm.classList.add('modal-form--visible');
-  //   });
-
-  //   closeBtn.addEventListener('click', function() {
-  //     modalForm.classList.remove('modal-form--visible')
-  //   }); 
-
-  //   document.addEventListener('keydown', function(evt) {
-  //     if (evt.keyCode === 27) {
-  //       modalForm.style.display = 'none';
-  //     }
-  //   });
-  // }
-
-  //NAV-FIXED/////////////////////////////////////////////////
-  // let header = document.querySelector('.header');
-  // let nav = document.querySelector('.nav');
-  // window.onscroll = function showNav () {
-  //   if (window.pageYOffset > 160) {
-  //     nav.classList.add('nav--fixed');
-  //     header.style.marginBottom = '55px';
-  //   } else {
-  //     nav.classList.remove('nav--fixed');
-  //     header.style.marginBottom = '0px'; 
-  //   };
-  // };
-
-//SMOOTH SCROLL/////////////////////////////////////////////////////
-  const anchors = document.querySelectorAll('a[href*="#"]');
-  for (let anchor of anchors) {
-    anchor.addEventListener('click', function(event) {
-      event.preventDefault();
-      const blockID = anchor.getAttribute('href');
-      document.querySelector('' + blockID).scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
-  };
-
-//FORM VALIDATE/////////////////////////////////////////////////////
-  const form = document.querySelectorAll('form');
-
-  form.forEach((item) => {
-    const formBtn = item.querySelector('.form__btn');
-    const validateElem = (elem) => {
-      if (elem.value == '') {
-        elem.style.borderColor = 'red';
-      } else {
-        elem.style.borderColor = '#41B7CF';
-      };
-    };
-
-    for (let elem of item.elements) {
-      if (!elem.classList.contains('form__checkbox') && !elem.classList.contains('form__btn') && !elem.classList.contains('form__textarea')) {
-        elem.addEventListener('blur', () => {
-          validateElem(elem);
-        });
-      };
-    };
-
-    formBtn.addEventListener('click', (event) => {
-      for (let elem of item.elements) {
-        if (!elem.classList.contains('form__checkbox') && !elem.classList.contains('form__btn') && !elem.classList.contains('form__textarea')) {
-          validateElem(elem);
-        };
-      };
-    });
-  });
-
-  //COOKIE////////////////////
-  const cookie = document.querySelector('.cookie');
-  const cookieBtn = cookie.querySelector('.cookie__btn');
-
-  cookieBtn.addEventListener('click',(event) => {
-    event.preventDefault();
-    cookie.classList.remove('cookie--active');
-    localStorage.setItem('cookieDisplayed','true');
-  });
-
-  setTimeout(() => {
-    if (!localStorage.getItem('cookieDisplayed')) {
-      cookie.classList.add('cookie--active');
-    }
-  }, 2000);
-
-  //SLIDERS//////////////////
-  // $('.owl-carousel-projects').owlCarousel({
-  //   loop:true,
-  //   margin:20,
-  //   nav:true,
-  //   dots:false,
-  //   startPosition: 4,
-  //   autoplay: true,
-  //   responsiveClass:true,
-  //   responsive : {
-  //     0:{
-  //       items:1,
-  //       dots:true,
-  //       nav:false
-  //     },
-  //     461:{
-  //       items:2,
-  //       dots:true,
-  //       nav:false
-  //     },
-  //     840:{
-  //       items:2,
-  //       nav:true
-  //     },
-  //     1060:{
-  //       items:3,
-  //       nav:true
-  //     }
-  //   }
-  // });
-
-  // $('.owl-carousel-partners').owlCarousel({
-  //   loop:true,
-  //   margin:20,
-  //   nav:true,
-  //   dots:true,
-  //   autoplay: true,
-  //   responsiveClass:true,
-  //   responsive : {
-  //     0:{
-  //       items:2,
-  //       nav:false
-  //     },
-  //     650:{
-  //       items:3,
-  //       nav:true
-  //     },
-  //     800:{
-  //       items:4,
-  //       nav:true
-  //     },
-  //     1000:{
-  //       items:5,
-  //       nav:true
-  //     }
-  //   }
-  // });
-
-  // $('.owl-carousel-certificates').owlCarousel({
-  //   responsiveClass:true,
-  //   responsive : {
-  //     0:{
-  //       items:1
-  //     },
-  //     440:{
-  //       items:2
-  //     },
-  //     840:{
-  //       items:2
-  //     },
-  //     1060:{
-  //       items:3
-  //     }
-  //   }
-  // });
-
-  // $('.owl-carousel-banner').owlCarousel({
-  //   loop:true,
-  //   margin:20,
-  //   nav:false,
-  //   dots:true,
-  //   items:1,
-  //   autoplay: true,
-  //   autoplayTimeout:4000
-  // });
-
-});
-
 (function () {
   'use strict';
   /**
@@ -630,8 +538,12 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             [720]: {
               spaceBetween: 24,
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
+            [1020]: {
+              spaceBetween: 24,
+              slidesPerView: 3,
+            }
           },
         },
         certificates: {
@@ -644,14 +556,31 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             [720]: {
               spaceBetween: 24,
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
+            [1020]: {
+              spaceBetween: 24,
+              slidesPerView: 3,
+            }
           },
         },
         partners: {
           slidesPerView: 2,
           grabCursor: true,
           spaceBetween: 12,
+          breakpoints: {
+            [400]: {
+              slidesPerView: 3,
+            },
+            [720]: {
+              spaceBetween: 24,
+              slidesPerView: 4,
+            },
+            [1020]: {
+              spaceBetween: 24,
+              slidesPerView: 5,
+            }
+          },
         },
       },
     },

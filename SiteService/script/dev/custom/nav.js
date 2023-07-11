@@ -13,6 +13,8 @@
       nav_container: '[data-app-nav-container]',
       nav_btn: '[data-app-nav-btn]',
       shape: '[data-app-shape]',
+      header: '.header',
+      nav: '.nav',
     },
     _classes: {
       disable: 'disabled-scroll',
@@ -27,9 +29,30 @@
       this._listeners();
       this._hammerInit();
       this._mobileMenuHandler();
+      this._fixMenuHandler();
     },
 
     _listeners() {},
+
+    /**
+     * Инит обработчика фиксированного меню
+     */
+    _fixMenuHandler() {
+      if (window.innerWidth >= 720) {
+        const header = document.querySelector(this._selectors.header),
+          nav = document.querySelector(this._selectors.nav);
+
+        window.onscroll = function showNav() {
+          if (window.pageYOffset > 160) {
+            nav.classList.add('nav--fixed');
+            header.style.marginBottom = '55px';
+          } else {
+            nav.classList.remove('nav--fixed');
+            header.style.marginBottom = '0';
+          }
+        };
+      }
+    },
 
     /**
      * Инит обработчика мобильного меню

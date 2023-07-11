@@ -182,12 +182,12 @@
               <button class="btn">Свяжитесь с нами</button>
             </div>
           </div>
-          <div class=" swiper-slide loading">
+          <!-- <div class=" swiper-slide loading">
             <div class="banner__item loading__item" data-app-catalog-img="img/banner.jpg">
               <h2>Изготовление тематических конструкций<br>Установка освещения и светодиодных композиций</h2>
               <button class="btn">Свяжитесь с нами</button>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -226,7 +226,7 @@
       <div class="services-container container-fluid wow fadeInUp">
         <h2>Направления деятельности</h2>
         <div class="row row-services">
-          <div class="service-wrapper col-12 col-md-6">
+          <div class="service-wrapper">
             <div class="service service-item1">
               <img class="service__img" src="img/service1.png" alt="Проводная связь">
               <div class="service-description">
@@ -235,7 +235,7 @@
               </div>
             </div>
           </div>
-          <div class="service-wrapper col-12 col-md-6">
+          <div class="service-wrapper">
             <div class="service service-item2">
               <img class="service__img" src="img/service4.png" alt="Беспроводная связь">
               <div class="service-description">
@@ -244,7 +244,7 @@
               </div>
             </div>
           </div>
-          <div class="service-wrapper col-12 col-md-6">
+          <div class="service-wrapper">
             <div class="service service-item3">
               <img class="service__img" src="img/service3.png" alt="Объекты связи">
               <div class="service-description">
@@ -253,7 +253,7 @@
               </div>
             </div>
           </div>
-          <div class="service-wrapper col-12 col-md-6">
+          <div class="service-wrapper">
             <div class="service service-item4">
               <img class="service__img" src="img/service2.png" alt="Системы безопасности и оповещения">
               <div class="service-description">
@@ -262,7 +262,7 @@
               </div>
             </div>
           </div>
-          <div class="service-wrapper col-12 col-md-6">
+          <!-- <div class="service-wrapper">
             <div class="service service-item5">
               <img class="service__img" src="img/service5.png" alt="Освещение и системы управления освещением">
               <div class="service-description">
@@ -270,8 +270,8 @@
                 <p class="service-description__text">Уличное, архитектурное, гобо-проекция, лазерная проекция</p>
               </div>
             </div>
-          </div>
-          <div class="service-wrapper col-12 col-md-6">
+          </div> -->
+          <!-- <div class="service-wrapper">
             <div class="service service-item6">
               <img class="service__img" src="img/service6.png" alt="Светодиодные малые архитектурные формы">
               <div class="service-description">
@@ -279,7 +279,7 @@
                 <p class="service-description__text">Изготовление и монтаж тематических конструкций с подключением и настройкой светодиодных элементов, включая программирование и создание анимации</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -379,7 +379,7 @@
               <p class="project-description__text">Монтаж, эксплуатационно-техническое обслуживание и проведение аварийно-восстановительных работ на МЗССС &laquo;Звезда-1,8/Ku&raquo; на территории Сахалинской области для ОКУ &laquo;Управление ОМ ГО, ЧС и ПБ&raquo;</p>
             </div>
           </div>
-          <div class="project swiper-slide project11">
+          <!-- <div class="project swiper-slide project11">
             <div class="loading">
               <div class="project__img loading__item" data-app-catalog-img="img/project11.jpg"></div>
             </div>
@@ -387,7 +387,7 @@
               <h3 class="project-description__title">Монтаж светодиодных конструкций на пл.Ленина в Южно-Сахалинске</h3>
               <p class="project-description__text">Изготовление и монтаж светодиодных конструкций в форме объёмного символа сердца и развевающихся знамён. Cоздание и программирование для них анимационных клипов</p>
             </div>
-          </div>
+          </div> -->
     		</div>
         <div class="slider-navigation line" data-app-arrows-container>
           <div class="arrow arrow-prev" data-app-arrow-prev></div>
@@ -521,13 +521,19 @@
       <h2>Свяжитесь с нами</h2>
       <div class="footer-container container-fluid wow fadeInUp">
         <form class="form" action="">
-          <input type="hidden" name="project_name" value="Site Service">
-          <input type="hidden" name="admin_email" value="info@2stk.ru">
-          <input type="hidden" name="form_subject" value="Footer-Form">
-          <input type="text" name="name" class="form__input" required placeholder="ФИО">
-          <input type="tel" name="tel" class="form__input" required placeholder="Ваш телефон">
-          <input type="email" name="email" class="form__input" required placeholder="Ваш Email">
-          <textarea class="form__textarea" name="name" rows="8" cols="80" placeholder="Ваши комментарии"></textarea>
+          <div class="form__user-info">
+            <div class="form__block">
+              <input type="hidden" name="project_name" value="Site Service">
+              <input type="hidden" name="admin_email" value="info@2stk.ru">
+              <input type="hidden" name="form_subject" value="Footer-Form">
+              <input type="text" name="name" class="form__input" required placeholder="ФИО">
+              <input type="tel" name="tel" class="form__input" required placeholder="Ваш телефон">
+              <input type="email" name="email" class="form__input" required placeholder="Ваш Email">
+            </div>
+            <div class="form__block">
+              <textarea class="form__textarea" name="name" rows="8" cols="80" placeholder="Ваши комментарии"></textarea>
+            </div>
+          </div>
           <div class="consent">
             <input class="form__btn" type="submit" disabled="disabled" name="submit" id="submit2" value="Отправить">
             <div class="consent__text">
@@ -546,15 +552,18 @@
             <span class="info__tel"><a href="tel:+79242805020">+7(924)280-50-20</a></span>
           </div>
         </div>
-        <div class="copyright">Copyright © 2020 SiteService. Designed and developed by <a href="https://theillear.github.io/Links/" target="_blank">TheIllEar</a></div>
+        <div class="copyright">Copyright © <span data-app-year></span> SiteService. Designed and developed by <a href="https://theillear.github.io/Links/" target="_blank">TheIllEar</a></div>
       </div>
     </footer>
 
     <!-- Cookie -->
     <div class="cookie">
-      <p class="cookie__text">
-        Этот сайт использует cookie-файлы, чтобы предоставить лучший пользовательский опыт. Если Вы продолжите использовать сайт, мы будем считать, что Вас это устраивает.
-      </p>
+      <div class="cookie__info">
+        <p class="cookie__text">
+          Мы используем cookie, чтобы предоставить лучший пользовательский опыт. 
+          Если Вы продолжите использовать сайт, мы будем считать, что Вас это устраивает. 
+        </p>
+      </div>
       <a href="#" class="cookie__btn">Хорошо</a>
     </div>
    
@@ -629,9 +638,3 @@
     <script src="https://kit.fontawesome.com/3e9be25118.js" crossorigin="anonymous"></script>
   </body>
 </html>
-<!-- 
-  - паддинги h2
-  - плавный скролл при клике но кнопку формы и в навигации
-  -  js формы
-  - высоту модалки и отключить скролл при появлении модалки
--->

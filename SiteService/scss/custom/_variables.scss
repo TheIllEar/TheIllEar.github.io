@@ -2,6 +2,7 @@
 $mobile: 320px;
 $middle-mobile: 510px;
 $tablet: 720px;
+$tablet_medium: 1020px;
 $desktop: 1200px;
 $large: 1560px;
 
@@ -22,19 +23,21 @@ $textgray: #7C8595;
 
 // Logo descriptor
 $font_logo_descr_mobile: 22px;
-$font_logo_descr_tablet: 24px;
+$font_logo_descr_tablet: 22px;
 
 // Banners title
 $font_banners_title_mobile: 22px;
-$font_banners_title_tablet: 24px;
+$font_banners_title_tablet: 27px;
+$font_banners_title_tablet_m: 29px;
 
 // Btn title
 $font_btn_title_mobile: 17px;
-$font_btn_title_tablet: 19px;
+$font_btn_title_tablet: 20px;
 
 // Nav title
 $font_nav_title_mobile: 18px;
-$font_nav_title_tablet: 22px;
+$font_nav_title_tablet: 19px;
+$font_nav_title_tablet_m: 20px;
 
 // Info item-title
 $font_info_item_title_mobile: 18px;
@@ -46,11 +49,26 @@ $font_info_item_tablet: 16px;
 
 // Consent
 $font_consent_mobile: 12px;
-$font_consenttablet: 16px;
+$font_consent_tablet: 14px;
 
 // copyright
 $font_copyright_mobile: 14px;
-$font_copyrighttablet: 16px;
+$font_copyright_tablet: 17px;
+
+// cookie
+$font_cookie_mobile: 14px;
+$font_cookie_tablet: 16px;
+
+// Info
+$font_info_mobile: 16px;
+$font_info_tablet: 15px;
+$font_info_tablet_m: 16px;
+$font_info_desktop: 17px;
+
+// h2
+$font_h2_mobile: 22px;
+$font_h2_tablet: 27px;
+$font_h2_desktop: 32px;
 
 
 //Radius

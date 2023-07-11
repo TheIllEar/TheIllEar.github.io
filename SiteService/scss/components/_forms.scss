@@ -116,6 +116,32 @@
   visibility: visible;
 }
 @include breakpoint($tablet) {
+  .form {
+    max-width: 700px;
+    margin: 0 auto;
+    &__user-info {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__block {
+      width: calc(50% - 7px);
+    }
+    &__input {
+      height: 45px;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    textarea.form__textarea {
+      height: 164px;
+    }
+    .consent__text {
+      input[type='checkbox'] {
+        top: 1px;
+      }
+    }
+  }
   .modal-form {
     .form {
       padding: $desktop_offset;
@@ -130,5 +156,10 @@
         margin-bottom: 30px;
       }
     }
+  }
+}
+@include breakpoint($tablet_medium) {
+  .form {
+    max-width: 900px;
   }
 }

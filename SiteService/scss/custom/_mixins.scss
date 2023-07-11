@@ -83,6 +83,11 @@
     font-size: $font_banners_title_mobile;
     @include breakpoint($tablet) {
       font-size: $font_banners_title_tablet;
+      max-width: 650px;
+    }
+    @include breakpoint($tablet_medium) {
+      font-size: $font_banners_title_tablet_m;
+      max-width: 750px;
     }
   }
   @if ($title == 'btn-title') {
@@ -99,7 +104,11 @@
     color: $textblue;
     font-size: $font_nav_title_mobile;
     @include breakpoint($tablet) {
-      font-size: $font_nav_title_tablet;
+      color: $color_white;
+      font-weight: 500;
+    }
+    @include breakpoint($tablet_medium) {
+      font-size: $font_nav_title_tablet_m;
     }
   }
   @if ($title == 'h2') {
@@ -107,7 +116,7 @@
     text-align: center;
     color: $textblue;
     padding: 35px 0 25px;
-    font-size: 22px;
+    font-size: $font_h2_mobile;
     font-weight: 500;
     &::after {
       content: '';
@@ -123,7 +132,13 @@
     }
     @include breakpoint($tablet) {
       padding: 65px 0 40px;
-      font-size: 25px;
+      font-size: $font_h2_tablet;
+      &::after {
+        bottom: 26px;
+      }
+    }
+    @include breakpoint($desktop) {
+      font-size: $font_h2_desktop;
       &::after {
         bottom: 13px;
       }
@@ -158,6 +173,10 @@
       }
     }
     @include breakpoint($tablet) {
+      font-size: $font_consent_tablet;
+      a {
+        font-size: $font_consent_tablet;
+      }
     }
   }
   @if ($title == 'copyright') {
@@ -174,16 +193,55 @@
       }
     }
     @include breakpoint($tablet) {
+      font-size: $font_copyright_tablet;
+      a {
+        font-size: $font_copyright_tablet;
+      }
     }
   }
-  // @if ($title == 'form-element') {
-  //   color: $color_accent;
-  //   font-weight: 500;
-  //   font-size: $font_copyright_mobile;
-  //   line-height: 22px;
-  //   @include breakpoint($tablet) {
-  //   }
-  // }
+  @if ($title == 'cookie') {
+    color: $color_white;
+    font-size: $font_cookie_mobile;
+    @include breakpoint($tablet) {
+      font-size: $font_cookie_tablet;
+    }
+  }
+  @if ($title == 'info') {
+    font-size: $font_info_mobile;
+    color: $textblue;
+    font-weight: 500;
+    line-height: 22px;
+    a {
+      font-size: $font_info_mobile;
+      color: $textblue;
+      text-decoration: none;
+      line-height: 22px;
+      &:hover {
+        transition: 0.3s;
+        color: $color_accent;
+      }
+    }
+    @include breakpoint($tablet) {
+      font-size: $font_info_tablet;
+      a {
+        font-size: $font_info_tablet;
+      }
+    }
+    @include breakpoint($tablet_medium) {
+      font-size: $font_info_tablet_m;
+      line-height: 26px;
+      a {
+        font-size: $font_info_tablet_m;
+        line-height: 26px;
+      }
+    }
+    @include breakpoint($desktop) {
+      font-size: $font_info_desktop;
+      a {
+        font-size: $font_info_desktop;
+      }
+    }
+  }
 }
 
 //Transition
