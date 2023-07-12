@@ -167,8 +167,9 @@
     <div class="nav-shape" data-app-shape></div>
 
     <!-- Banners -->
-    <section class="banner slider wow fadeInDown" data-app-slider-container>
-      <div class="swiper-container banner-container container-fluid pagination loop" data-app-slider-autoplay="4400" data-app-swiper-container data-app-slider="banners">
+    <section class="banner slider" data-app-slider-container>
+      <!-- data-app-slider-autoplay="4400" -->
+      <div class="swiper-container banner-container container-fluid pagination loop"  data-app-swiper-container data-app-slider="banners">
         <div class="swiper-wrapper">
           <div class="swiper-slide loading">
             <div class="banner__item loading__item" data-app-catalog-img="img/banner.jpg">
@@ -222,8 +223,8 @@
     </div>
 
     <!-- Directions -->
-    <section class="services" id="services">
-      <div class="services-container container-fluid wow fadeInUp">
+    <section class="services aos-init" id="services" data-aos="fade-up">
+      <div class="services-container container-fluid">
         <h2>Направления деятельности</h2>
         <div class="row row-services">
           <div class="service-wrapper">
@@ -285,7 +286,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="projects slider" id="projects" data-app-slider-container>
+    <section class="projects slider aos-init" id="projects" data-app-slider-container data-aos="fade-up">
       <h2>Реализованные проекты</h2>
       <div class="projects-container container-fluid swiper-container navigation" data-app-swiper-container data-app-slider="projects">
         <div class="swiper-wrapper">
@@ -411,8 +412,8 @@
         </div>
       </div>
     </section>
-    <section class="about" id="about">
-      <div class="about-container container-fluid wow fadeInUp">
+    <section class="about aos-init" id="about" data-aos="fade-up">
+      <div class="about-container container-fluid">
         <h2>О нашей компании</h2>
         <div class="row row-about">
           <div class="about-picture">
@@ -443,7 +444,7 @@
     </section>
 
     <!-- Certificates -->
-    <section class="certificates slider" data-app-slider-container id="certificates">
+    <section class="certificates slider aos-init" data-app-slider-container id="certificates" data-aos="fade-up">
       <h2>Наши сертификаты, лицензии, допуски</h2>
       <div class="certificates-container container-fluid swiper-container pagination" data-app-swiper-container data-app-slider="certificates">
         <div class="swiper-wrapper">
@@ -519,7 +520,7 @@
     <!-- Footer -->
     <footer class="footer" id="contacts">
       <h2>Свяжитесь с нами</h2>
-      <div class="footer-container container-fluid wow fadeInUp">
+      <div class="footer-container container-fluid">
         <form class="form" action="">
           <div class="form__user-info">
             <div class="form__block">

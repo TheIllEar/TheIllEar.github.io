@@ -49,6 +49,12 @@
     transform: scale(2) rotate(210deg);
     z-index: 2;
   }
+  @include breakpoint($tablet_medium) {
+    &::after {
+      width: 200%;
+      height: 300%;
+    }
+  }
 }
 
 @mixin fake($after: true) {
@@ -88,6 +94,13 @@
     @include breakpoint($tablet_medium) {
       font-size: $font_banners_title_tablet_m;
       max-width: 750px;
+      line-height: 40px;
+    }
+    @include breakpoint($desktop) {
+      font-size: $font_banners_title_desktop;
+    }
+    @include breakpoint($large) {
+      font-size: $font_banners_title_large;
     }
   }
   @if ($title == 'btn-title') {
@@ -138,9 +151,10 @@
       }
     }
     @include breakpoint($desktop) {
+      padding: 65px 0 45px;
       font-size: $font_h2_desktop;
       &::after {
-        bottom: 13px;
+        bottom: 32px;
       }
     }
   }
@@ -151,6 +165,9 @@
     @include breakpoint($tablet) {
       font-size: $font_info_item_title_tablet;
     }
+    @include breakpoint($desktop) {
+      font-size: $font_info_item_title_desktop;
+    }
   }
   @if ($title == 'item') {
     color: $textgray;
@@ -158,6 +175,10 @@
     @include breakpoint($tablet) {
       font-size: $font_info_item_tablet;
       line-height: 20px;
+    }
+    @include breakpoint($desktop) {
+      font-size: $font_info_item_desktop;
+      line-height: 22px;
     }
   }
   @if ($title == 'consent') {
@@ -196,6 +217,12 @@
       font-size: $font_copyright_tablet;
       a {
         font-size: $font_copyright_tablet;
+      }
+    }
+    @include breakpoint($desktop) {
+      font-size: $font_copyright_desktop;
+      a {
+        font-size: $font_copyright_desktop;
       }
     }
   }

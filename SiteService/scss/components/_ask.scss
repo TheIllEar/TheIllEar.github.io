@@ -77,3 +77,49 @@
     }
   }
 }
+@include breakpoint($desktop) {
+  .ask {
+    .row-ask {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    &-description {
+      margin-bottom: 0;
+    }
+    &-cta {
+      .btn {
+        margin-top: 0;
+      }
+    }
+    &__img {
+      &--left {
+        left: -190px;
+        top: 20px;
+        height: 150px;
+      }
+      &--right {
+        height: 175px;
+        top: -32px;
+        right: -196px;
+      }
+    }
+  }
+}
+@include breakpoint($large) {
+  .ask {
+    &__img {
+      &--left {
+        left: -240px;
+        height: 170px;
+        top: 10px;
+      }
+      &--right {
+        height: 192px;
+        top: -40px;
+        right: -270px;
+      }
+    }
+  }
+}

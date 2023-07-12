@@ -58,8 +58,8 @@
       border: 1px solid $color_accent;
       border-radius: 50%;
       box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       cursor: pointer;
       &:not(.swiper-button-disabled) {
         &:hover,
@@ -89,7 +89,7 @@
         left: 3px;
         top: 50%;
         transform: translateY(-50%);
-        width: calc(100% - 63px);
+        width: calc(100% - 75px);
         height: 1px;
         border-bottom: 1px dashed $color_accent;
       }

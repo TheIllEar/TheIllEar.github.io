@@ -9,7 +9,7 @@ $large: 1560px;
 //Colors
 $color_main: #f8f8f8;
 $color_accent: #44d4e2;
-$color_accent_light: #9ae3e9;
+$color_accent_light: #a0e4e9;
 $color_white: #fff;
 $color_grey: #FAFBFC;
 $color_grey2: #e6e6e6;
@@ -17,9 +17,6 @@ $color_grey3: #e5e5e5;
 $color_black: #000;
 $textblue: #303030;
 $textgray: #7C8595;
-
-
-/////////FONTS
 
 // Logo descriptor
 $font_logo_descr_mobile: 22px;
@@ -29,6 +26,8 @@ $font_logo_descr_tablet: 22px;
 $font_banners_title_mobile: 22px;
 $font_banners_title_tablet: 27px;
 $font_banners_title_tablet_m: 29px;
+$font_banners_title_desktop: 32px;
+$font_banners_title_large: 35;
 
 // Btn title
 $font_btn_title_mobile: 17px;
@@ -42,10 +41,12 @@ $font_nav_title_tablet_m: 20px;
 // Info item-title
 $font_info_item_title_mobile: 18px;
 $font_info_item_title_tablet: 20px;
+$font_info_item_title_desktop: 24px;
 
 // Info item
 $font_info_item_mobile: 14px;
 $font_info_item_tablet: 16px;
+$font_info_item_desktop: 19px;
 
 // Consent
 $font_consent_mobile: 12px;
@@ -54,6 +55,7 @@ $font_consent_tablet: 14px;
 // copyright
 $font_copyright_mobile: 14px;
 $font_copyright_tablet: 17px;
+$font_copyright_desktop: 20px;
 
 // cookie
 $font_cookie_mobile: 14px;

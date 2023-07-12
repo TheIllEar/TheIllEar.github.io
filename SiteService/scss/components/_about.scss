@@ -69,3 +69,12 @@
     }
   }
 }
+@include breakpoint($desktop) {
+  .about {
+    &-description {
+      &__text {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

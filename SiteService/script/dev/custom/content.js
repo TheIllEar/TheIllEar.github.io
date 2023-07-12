@@ -22,6 +22,7 @@
     init() {
       this._modalCookiesHandler();
       this._dateHandler();
+      this._initAos();
     },
 
     /**
@@ -53,6 +54,11 @@
       if (dateContainer) {
         dateContainer.textContent = new Date().getFullYear();
       }
+    },
+
+    _initAos() {
+      console.log('aos', AOS);
+      AOS.init();
     },
   };
 })();

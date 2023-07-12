@@ -9,13 +9,17 @@
     color: $color_white;
   }
   .partner {
-    background: $color_white;
+    background-color: $color_white;
     height: auto;
     width: 100%;
+    max-width: 265px;
     display: flex;
     justify-content: center;
     border-radius: $little_radius;
     padding: 5px;
+    &:not(:last-child) {
+      margin-right: $mobile_offset;
+    }
     &__img {
       width: 80%;
       object-fit: contain;
@@ -26,6 +30,14 @@
       .swiper-wrapper {
         padding-bottom: 20px;
       }
+    }
+  }
+}
+@include breakpoint(1448px) {
+  .partners {
+    &-container {
+      padding-left: 5px;
+      padding-right: 5px;
     }
   }
 }
